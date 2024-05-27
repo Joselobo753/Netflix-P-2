@@ -6,6 +6,7 @@ main {
 
 h1,
 h2,
-p {
+p,
+label {
   color: white;
 }
