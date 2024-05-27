@@ -14,5 +14,7 @@ p {
   background-color: #333333;
 }
 
-.imgPresentacion {
+.otroColor {
+  background-color: #564d4d;
+  /* SE DEBE ELIMINAR UNO DE LOS DOS COLORES CUANDO SE ELIJA CON CUAL QUEDARSE */
 }
