@@ -1,4 +1,12 @@
 import { validateImg, validateTexto, validateUrl } from "../validadores.js";
+import { cargarTabla } from "./ultis.js";
+
+
+
+cargarTabla();
+
+
+
 const $form = document.getElementById("formulario")
 const $inputNombre = document.getElementById("nombre")
 const $inputTipo = document.getElementById("tipo")
@@ -37,5 +45,29 @@ $form.addEventListener("submit",(e)=>{
     const descripcion = $inputDescripcion.value
 
     (titulo,tipo,caratula,trailer,descripcion)
-})
 
+
+$form.reset();
+  $inputNombre.classList.remove('is-valid', 'is-invalid');
+  $inputNumero.classList.remove('is-valid', 'is-invalid');
+  $inputEmail.classList.remove('is-valid', 'is-invalid');
+  $inputImagen.classList.remove('is-valid', 'is-invalid');
+
+  // D. Actualizar tabla
+
+  cargarTabla();
+
+  // E. Notificar al usuario
+
+  let mensaje = `Contacto creado bajo el nombre de ${nombre}`;
+  if (estaEditando()) mensaje = 'Contacto editado exitosamente';
+
+  swal.fire({
+    title: 'Exito',
+    text: mensaje,
+    icon: 'success',
+    showConfirmButton: true,
+    showCancelButton: false,
+    confirmButtonText: 'Tremen2',
+  });
+});
