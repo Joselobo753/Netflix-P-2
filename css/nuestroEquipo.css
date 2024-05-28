@@ -3,6 +3,10 @@
 }
 
 .otroColor {
-  background-color: #564d4d;
+  background-color: #646464;
   /* SE DEBE ELIMINAR UNO DE LOS DOS COLORES CUANDO SE ELIJA CON CUAL QUEDARSE */
+}
+
+.img-card {
+  object-fit: cover;
 }
