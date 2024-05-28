@@ -1,4 +1,4 @@
-import { pelicula } from "./Pelicula.js";
+import { pelicula } from "../Pelicula.js";
 
 export class serie extends pelicula{
     constructor(titulo, tipo, caratula, trailer, descripcion, capitulos) {

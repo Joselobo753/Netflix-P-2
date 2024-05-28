@@ -49,9 +49,10 @@ $form.addEventListener("submit",(e)=>{
 
 $form.reset();
   $inputNombre.classList.remove('is-valid', 'is-invalid');
-  $inputNumero.classList.remove('is-valid', 'is-invalid');
-  $inputEmail.classList.remove('is-valid', 'is-invalid');
-  $inputImagen.classList.remove('is-valid', 'is-invalid');
+  $inputTipo.classList.remove('is-valid', 'is-invalid');
+  $inputCaratula.classList.remove('is-valid', 'is-invalid');
+  $inputTrailer.classList.remove('is-valid', 'is-invalid');
+  $inputDescripcion.classList.remove('is-valid', 'is-invalid');
 
   // D. Actualizar tabla
 
@@ -59,8 +60,8 @@ $form.reset();
 
   // E. Notificar al usuario
 
-  let mensaje = `Contacto creado bajo el nombre de ${nombre}`;
-  if (estaEditando()) mensaje = 'Contacto editado exitosamente';
+  let mensaje = `Nueva pelicula creada`;
+  if (estaEditando()) mensaje = 'Pelicula editado exitosamente';
 
   swal.fire({
     title: 'Exito',
