@@ -28,19 +28,20 @@
       <!-- Inserte el header aqui -->
     </header>
     <main class="d-flex flex-column align-items-center">
-      <div class="portada">
+      <div id="imagenFondo" class="portada">
         <div
-          class="h-100 d-flex flex-column align-items-start justify-content-center mt-5 pt-5 prueba"
+          class="h-100 d-flex flex-column align-items-start justify-content-center mt-5 pt-5 logoPelicula"
         >
           <div class="mt-5 pt-5">
             <img
+              id="logoPelicula"
               class="w-50"
               src="https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABedJbNHpIzA5t19c_F2FX3ooC2sQ5jlx9gYjvcL9RiuGSlt9fMM6SlPSMOD8-KVm_4MouAquvYI3_VELkjJTcq3yUXTOlnTY5r8vTCfaI0sa.png?r=1b9"
-              alt=""
+              alt="Guerra Mundial Z"
             />
           </div>
           <div class="mt-5 pt-3">
-            <a class="px-1" href="https://www.youtube.com/watch?v=YtWd01kdJVE">
+            <a class="px-1" href="404.html">
               <button class="btn btn-light">
                 <i class="fa-solid fa-play px-2"></i>Reproducir
               </button>
@@ -51,11 +52,17 @@
       <div class="container">
         <div>
           <div>
-            <p>2013 1 h 57 min <span class="hd"> HD</span></p>
-            <p><span class="edad">16+</span> violencia</p>
+            <p>Acerca de <span id="titulo">Guerra Mundial Z</span></p>
           </div>
           <div>
             <p>
+              <span id="fechaEstreno">2013</span>
+              <span id="duracion">1 h 57 min</span>
+              <span class="hd"> HD</span>
+            </p>
+          </div>
+          <div>
+            <p id="descripcion">
               Corre si puedes. Ocúltate si tienes tiempo. Hagas lo que hagas,
               ¡que no te muerdan! Brad Pitt protagoniza este intenso thriller
               sobre una epidemia zombi.
@@ -63,36 +70,21 @@
           </div>
         </div>
       </div>
+      <iframe
+        id="traileraso"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/_pLxluB3CUo?si=-VF_oGWdL4HxzLzX"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
       <div class="container mt-3">
-        <p>Acerca de <span class="titulo">Guerra Mundial Z</span></p>
         <p>
-          <span class="apartado">Direccion: </span> <span>Marc Forster</span>
-        </p>
-        <p>
-          <span class="apartado">Elenco: </span>
-          <span
-            >Brad Pitt, Mireille Enos, Daniella Kertesz, James Badge Dale, David
-            Morse, Ludi Boeken, Fana Mokoena, Abigail Hargrove, Sterling Jerins,
-            Fabrizio Guido</span
-          >
-        </p>
-        <p>
-          <span class="apartado">Guion: </span>
-          <span
-            >Matthew Michael Carnahan, Drew Goddard, Damon Lindelof, J. Michael
-            Straczynski</span
-          >
-        </p>
-        <p>
-          <span class="apartado">Generos: </span>
-          <span
-            >Cine de sci-fi, Pelicula de terror, Peliculas basadas en libros,
-            Peliculas de accion y aventura, Peliculas de terror de zombis</span
-          >
-        </p>
-        <p>
-          <span class="apartado">Este titulo es: </span>
-          <span>Violento, De terror, De suspenso</span>
+          <span class="apartado">Categorias:</span>
+          <span>Inserte las categorias en un span</span>
         </p>
       </div>
     </main>

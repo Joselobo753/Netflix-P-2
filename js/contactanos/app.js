@@ -51,8 +51,7 @@ $btnEnviar.addEventListener("click", (event) => {
   const mensaje = new MensajeContacto(nombre, email, msg);
   agregarALS(mensaje, "listaMensajes");
 
-  let msgMail =
-    "Se recibio un formulario de contacto, ingresa a la pagina de administracion para visualizarlo";
+  let msgMail = `Se recibio un formulario de contacto de ${email}, ingresa al area de administracion para visualizarlo`;
   let tituloMail = "Formulario de contacto";
   enviarMail(tituloMail, msgMail);
 

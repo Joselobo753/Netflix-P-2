@@ -5,15 +5,17 @@
   background-size: cover;
   mask-image: linear-gradient(black 80%, transparent);
 }
+
 .btn {
   background-color: white;
   color: black;
   font-weight: 600;
-  height: 40px;
-  width: 180px;
+  font-size: xx-large;
+  height: 80px;
+  width: 320px;
 }
 
-.prueba {
+.logoPelicula {
   margin-left: 6dvw;
 }
 
@@ -25,13 +27,7 @@
   margin: 0 auto;
 }
 
-.edad {
-  border: 1px solid white;
-  padding: 0 4px;
-  margin: auto;
-}
-
-.titulo {
+#titulo {
   font-weight: 700;
 }
 
