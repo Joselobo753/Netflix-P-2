@@ -3,7 +3,7 @@ const con los ids, validaciones al blur y al submit y boton resetear
  */
 import { validateNombre, validateEmail, validateMsg } from "./validators.js";
 import { MensajeContacto } from "./MensajeContacto.js";
-import { agregarALS, enviarMail } from "../utils.js";
+import { agregarALS, enviarMail, resetInput } from "../utils.js";
 
 const $formularioCompleto = document.querySelector("#formularioCompleto");
 
@@ -51,12 +51,15 @@ $btnEnviar.addEventListener("click", (event) => {
   const mensaje = new MensajeContacto(nombre, email, msg);
   agregarALS(mensaje, "listaMensajes");
 
-  let msgMail = `Se recibio un formulario de contacto de ${email}, ingresa al area de administracion para visualizarlo`;
-  let tituloMail = "Formulario de contacto";
+  let msgMail = `Se recibio un formulario de contacto de ${email}: ${msg}`;
+  let tituloMail = `Formulario de contacto de ${nombre}`;
   enviarMail(tituloMail, msgMail);
 
   //REEMPLAZAR ALERT POR SWEETALERT
+  resetInput($inputEmail);
+  resetInput($inputNombre);
+  resetInput($inputMensaje);
   $formularioCompleto.reset();
-  alert("Formulario enviado");
+  Swal.fire("Formulario enviado correctamente!");
   return;
 });
