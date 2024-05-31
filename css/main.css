@@ -1,0 +1,331 @@
+:root {
+  --red: #db0000;
+  --background: #141414;
+  --secondary: #808080;
+}
+
+body {
+  background: var(--background);
+  font-family: "Open Sans", sans-serif;
+}
+
+/* ---- ----- ----- Header ----- ----- ----- */
+.contenedor {
+  width: 90%;
+  margin: auto;
+}
+
+.navbar {
+  transition: background-color 0.5s;
+}
+
+.navbar.transparent {
+  background-color: transparent;
+}
+
+.navbar.solid {
+  background-color: var(--background);
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #ffffff;
+}
+.navbar-nav .nav-item .nav-link.active {
+  font-weight: bold;
+}
+.navbar-nav .nav-item .nav-link:hover {
+  color: #b3b3b3;
+}
+.navbar-nav .nav-item .nav-link i {
+  font-size: 1.2rem;
+}
+
+.custom-input {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+
+.custom-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.custom-input:focus {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  outline: none;
+}
+
+.navbar .form-control.me-2 {
+  margin-right: 10px;
+}
+
+.navbar .nav-link {
+  margin-left: 10px;
+}
+
+/* ---- ----- ----- Pelicula Principal ----- ----- ----- */
+.pelicula-principal {
+  font-size: 16px;
+  min-height: 38rem;
+  color: #ffffff;
+  background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%),
+    url(../resources/img/imagenFondoInterestellar.jpg);
+  background-position: center center;
+  background-size: cover;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.pelicula-principal .contenedor {
+  margin: 0 auto;
+}
+
+.pelicula-principal .titulo {
+  font-weight: 600;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.pelicula-principal .descripcion {
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  max-width: 50%;
+  margin-bottom: 1.5rem;
+}
+
+.pelicula-principal .boton {
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  font-size: 1.05rem;
+}
+.pelicula-principal .boton-play {
+  color: var(--background);
+  background: #ffffff;
+
+  &:hover {
+    filter: brightness(0.7);
+  }
+}
+.pelicula-principal .boton-info {
+  color: #ffffff;
+  background: #5f5e5ed7;
+
+  &:hover {
+    background: #5f5e5e81;
+  }
+}
+
+.pelicula-principal .boton i {
+  margin-right: 1rem;
+  font-size: 1.3rem;
+}
+/* ---- ----- ----- Main ----- ----- ----- */
+/* ---- ----- ----- Titulo y Controles ----- ----- ----- */
+.contenedor-titulo-controles {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.contenedor-titulo-controles h5 {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.contenedor-titulo-controles .indicadores button {
+  background: #ffffff;
+  height: 3px;
+  width: 10px;
+  cursor: pointer;
+  border: none;
+  margin-right: 2px;
+}
+
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+  background: var(--red);
+}
+
+/* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
+.peliculas-carousel {
+  margin-bottom: 10px;
+}
+
+.peliculas-carousel .contenedor-principal {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.peliculas-carousel .contenedor-principal .flecha-izquierda,
+.peliculas-carousel .contenedor-principal .flecha-derecha {
+  position: absolute;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 40px;
+  height: 50%;
+  top: calc(50% - 25%);
+  line-height: 40px;
+  width: 50px;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 500;
+  transition: 0.2s ease all;
+}
+
+.peliculas-carousel .contenedor-principal .flecha-izquierda:hover,
+.peliculas-carousel .contenedor-principal .flecha-derecha:hover {
+  background: var(--background);
+}
+
+.peliculas-carousel .contenedor-principal .flecha-izquierda {
+  left: 0;
+}
+
+.peliculas-carousel .contenedor-principal .flecha-derecha {
+  right: 0;
+}
+
+/* ---- ----- ----- Carousel ----- ----- ----- */
+.peliculas-carousel .contenedor-carousel {
+  width: 100%;
+  padding: 5px 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.peliculas-carousel .contenedor-carousel .carousel {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.peliculas-carousel .contenedor-carousel .carousel .pelicula {
+  min-width: 20%;
+  transition: 0.3s ease all;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.peliculas-carousel .contenedor-carousel .carousel .pelicula:hover {
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+.peliculas-carousel .contenedor-carousel .carousel .pelicula img {
+  width: 100%;
+  vertical-align: top;
+}
+
+/* ---- ----- ----- Footer ----- ----- ----- */
+.footer {
+  border-top: 1px solid var(--background);
+}
+
+.footer ul {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer .social-icon {
+  font-size: 1.5em;
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer .social-icon:hover {
+  color: #ffffff;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--secondary);
+}
+
+.footer button {
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.footer button:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* ---- ----- ----- Media Queries ----- ----- ----- */
+@media screen and (max-width: 800px) {
+  header .logotipo {
+    margin-bottom: 10px;
+    font-size: 30px;
+  }
+
+  .pelicula-principal {
+    font-size: 14px;
+  }
+
+  .pelicula-principal .descripcion {
+    max-width: 100%;
+  }
+
+  .navbar {
+    background-color: var(--background) !important;
+    transition: background-color 0.3s ease;
+  }
+
+  .navbar-nav .nav-item {
+    text-align: start;
+    margin: 10px 0;
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .peliculas-carousel .contenedor-carousel {
+    overflow: visible;
+  }
+
+  .peliculas-carousel .contenedor-carousel .carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .peliculas-carousel .indicadores,
+  .peliculas-carousel .flecha-izquierda,
+  .peliculas-carousel .flecha-derecha,
+  .peliculas-carousel
+    .contenedor-principal
+    .contenedor-carousel
+    .carousel
+    .pelicula-hidden {
+    display: none;
+  }
+}
