@@ -2,7 +2,7 @@
 const con los ids, validaciones al blur y al submit y boton resetear
  */
 import { validateNombre, validateEmail, validateMsg } from "./validators.js";
-import { MensajeContacto } from "../clases/MensajeContacto.js";
+import { MensajeContacto } from "./MensajeContacto.js";
 import { agregarALS, enviarMail } from "../utils.js";
 
 const $formularioCompleto = document.querySelector("#formularioCompleto");
