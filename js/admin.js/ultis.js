@@ -31,12 +31,12 @@ const cargarFilaTabla = (pelicula, indice) => {
 
   
   const $tdTitulo = document.createElement("td");
-  $tdNombre.textContent = pelicula.titulo;
+  $tdTitulo.textContent = pelicula.titulo;
   $tr.appendChild($tdNombre);
 
   
   const $tdTipo = document.createElement("td");
-  $tdNumero.textContent = pelicula.tipo;
+  $tdTipo.textContent = pelicula.tipo;
   $tr.appendChild($tdNumero);
 
   
@@ -99,10 +99,10 @@ const $inputDescripcion = document.getElementById("descripcion")
 
   // 2. Cargar la info
   $inputNombre.value = pelicula.titulo
-  $inputNumero.value = pelicula.tipo;
-  $inputEmail.value = pelicula.caratula;
-  $inputImagen.value = pelicula.trailer;
-  $inputNotas.value = pelicula.descripcion;
+  $inputTipo.value = pelicula.tipo;
+  $inputCaratula.value = pelicula.caratula;
+  $inputTrailer.value = pelicula.trailer;
+  $inputDescripcion.value = pelicula.descripcion;
 
   // 3. Guardar código
   sessionStorage.setItem("codigoPelicula", pelicula.codigo);

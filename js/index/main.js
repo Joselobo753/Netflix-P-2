@@ -1,4 +1,41 @@
 // ----- ----- Event Listener para scroll. ----- -----
+import { obtenerContactosDeLS } from '../utils.js';
+
+// ----------------------------------
+// 1. Seleccion de elementos
+// ----------------------------------
+
+const $select = document.getElementById('select-contactos');
+const $sectionContactos = document.getElementById('section-contactos');
+const contactos = obtenerContactosDeLS();
+
+// ----------------------------------
+// 2. Carga en el select
+// ----------------------------------
+
+contactos.forEach((contacto) => {
+  const $option = document.createElement('option');
+  $option.value = contacto.codigo;
+  $option.innerText = contacto.nombre;
+  $select.appendChild($option);
+});
+
+// ----------------------------------
+// 3. Carga en el body
+// ----------------------------------
+
+contactos.forEach((contacto) => {
+  const $article = document.createElement('article');
+  $article.innerText = contacto.nombre;
+  $sectionContactos.appendChild($article);
+});
+
+
+
+/* <div class="pelicula">
+                <a href="#"><img src="resources/index/img1.jpg" alt="" /></a>
+              </div>
+*/
 window.addEventListener("scroll", function () {
   const navbar = document.getElementById("navbar");
   if (window.scrollY > 100) {
