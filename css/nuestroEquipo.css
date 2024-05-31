@@ -9,4 +9,5 @@
 
 .img-card {
   object-fit: cover;
+  max-height: 390px;
 }
