@@ -19,6 +19,11 @@ export const invalidInput = ($input) => {
   $input.classList.remove("is-valid");
 };
 
+export const resetInput = ($input) => {
+  $input.classList.remove("is-invalid");
+  $input.classList.remove("is-valid");
+};
+
 export const obtenerDeLS = (nombreObjeto) => {
   return JSON.parse(localStorage.getItem(nombreObjeto)) || [];
 };
@@ -43,23 +48,22 @@ export const enviarMail = (titulo, msg, destinatario) => {
   }).then((message) => alert(message));
 };
 
-export const obtenerPeliculasDeLS = () =>{
-    return ordenarLista(JSON.parse(localStorage.getItem("pelicula") || []))
-}
+export const obtenerPeliculasDeLS = () => {
+  return ordenarLista(JSON.parse(localStorage.getItem("pelicula") || []));
+};
 
-export const estaLogueado = () =>{
-    return sessionStorage.getItem("estaLogueado")
-}
+export const estaLogueado = () => {
+  return sessionStorage.getItem("estaLogueado");
+};
 
 export const ordenarLista = (lista) => {
-    return lista.sort((a, b) => {
-      if (a.nombre > b.nombre) {
-        return 1;
-      }
-      if (a.nombre < b.nombre) {
-        return -1;
-      }
-      return 0;
-    });
-  };
-
+  return lista.sort((a, b) => {
+    if (a.nombre > b.nombre) {
+      return 1;
+    }
+    if (a.nombre < b.nombre) {
+      return -1;
+    }
+    return 0;
+  });
+};
