@@ -12,10 +12,6 @@
   align-items: center;
 }
 
-.invert {
-  filter: invert(1);
-}
-
 .pelicula-principal .contenedor {
   margin: 0 auto;
 }
