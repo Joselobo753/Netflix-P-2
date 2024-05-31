@@ -36,7 +36,7 @@ export const agregarALS = (objetoAgregar, nombreGuardado) => {
   localStorage.setItem(nombreGuardado, JSON.stringify(lista));
 };
 
-export const enviarMail = (titulo, msg, destinatario) => {
+export const enviarMail = (titulo, msg) => {
   Email.send({
     Host: "smtp.elasticemail.com",
     Username: "proyectocopianetflix@gmail.com",
@@ -45,7 +45,7 @@ export const enviarMail = (titulo, msg, destinatario) => {
     From: "proyectocopianetflix@gmail.com",
     Subject: titulo,
     Body: msg,
-  }).then((message) => alert(message));
+  });
 };
 
 export const obtenerPeliculasDeLS = () => {

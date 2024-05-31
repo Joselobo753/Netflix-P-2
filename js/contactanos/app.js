@@ -60,6 +60,6 @@ $btnEnviar.addEventListener("click", (event) => {
   resetInput($inputNombre);
   resetInput($inputMensaje);
   $formularioCompleto.reset();
-  alert("Formulario enviado");
+  Swal.fire("Formulario enviado correctamente!");
   return;
 });
