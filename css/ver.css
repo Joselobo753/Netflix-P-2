@@ -1,0 +1,36 @@
+.portada {
+  background-image: url("https://bloody-disgusting.com/wp-content/uploads/2017/11/world-war-z-2.jpg");
+  width: 99dvw;
+  height: 100dvh;
+  background-size: cover;
+  mask-image: linear-gradient(black 80%, transparent);
+}
+
+.btn {
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  font-size: xx-large;
+  height: 80px;
+  width: 320px;
+}
+
+.logoPelicula {
+  margin-left: 6dvw;
+}
+
+.hd {
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 0 8px;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+#titulo {
+  font-weight: 700;
+}
+
+.apartado {
+  color: rgb(141, 141, 141);
+}
