@@ -1,0 +1,177 @@
+/* ---- ----- ----- Pelicula Principal ----- ----- ----- */
+.pelicula-principal {
+  font-size: 16px;
+  min-height: 52rem;
+  color: #ffffff;
+  background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%),
+    url(../resources/index/imagenFondoInterestellar.jpg);
+  background-position: center center;
+  background-size: cover;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.invert {
+  filter: invert(1);
+}
+
+.pelicula-principal .contenedor {
+  margin: 0 auto;
+}
+
+.pelicula-principal .titulo {
+  font-weight: 600;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.pelicula-principal .descripcion {
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  max-width: 50%;
+  margin-bottom: 1.5rem;
+}
+
+.pelicula-principal .boton {
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  font-size: 1.05rem;
+}
+.pelicula-principal .boton-play {
+  color: var(--background);
+  background: #ffffff;
+
+  &:hover {
+    filter: brightness(0.7);
+  }
+}
+.pelicula-principal .boton-info {
+  color: #ffffff;
+  background: #5f5e5ed7;
+
+  &:hover {
+    background: #5f5e5e81;
+  }
+}
+
+.pelicula-principal .boton i {
+  margin-right: 1rem;
+  font-size: 1.3rem;
+}
+/* ---- ----- ----- Main ----- ----- ----- */
+/* ---- ----- ----- Titulo y Controles ----- ----- ----- */
+.contenedor-titulo-controles {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.contenedor-titulo-controles h5 {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.contenedor-titulo-controles .indicadores button {
+  background: #ffffff;
+  height: 3px;
+  width: 10px;
+  cursor: pointer;
+  border: none;
+  margin-right: 2px;
+}
+
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+  background: var(--red);
+}
+
+/* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
+.peliculas-carousel {
+  margin-bottom: 10px;
+}
+
+.peliculas-carousel .contenedor-principal {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.peliculas-carousel .contenedor-principal .flecha-izquierda,
+.peliculas-carousel .contenedor-principal .flecha-derecha {
+  position: absolute;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 40px;
+  height: 50%;
+  top: calc(50% - 25%);
+  line-height: 40px;
+  width: 50px;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 500;
+  transition: 0.2s ease all;
+}
+
+.peliculas-carousel .contenedor-principal .flecha-izquierda:hover,
+.peliculas-carousel .contenedor-principal .flecha-derecha:hover {
+  background: var(--background);
+}
+
+.peliculas-carousel .contenedor-principal .flecha-izquierda {
+  left: 0;
+}
+
+.peliculas-carousel .contenedor-principal .flecha-derecha {
+  right: 0;
+}
+
+/* ---- ----- ----- Carousel ----- ----- ----- */
+.peliculas-carousel .contenedor-carousel {
+  width: 100%;
+  padding: 5px 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.peliculas-carousel .contenedor-carousel .carousel {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.peliculas-carousel .contenedor-carousel .carousel .pelicula {
+  min-width: 20%;
+  transition: 0.3s ease all;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.peliculas-carousel .contenedor-carousel .carousel .pelicula:hover {
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+.peliculas-carousel .contenedor-carousel .carousel .pelicula img {
+  width: 100%;
+  vertical-align: top;
+}
+.pelicula{
+  position: relative;
+}
+.pelicula-texto {
+  opacity: 0;
+  position: absolute;
+  bottom: 10px; 
+  left: 10px; 
+  color: white;
+
+
+  font-size: 14px; 
+}
+.pelicula:hover .pelicula-texto{
+  opacity: 1;
+}
