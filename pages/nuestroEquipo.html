@@ -22,6 +22,10 @@
       crossorigin="anonymous"
     />
     <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
+    />
+    <link
       rel="shortcut icon"
       href="https://seeklogo.com/images/N/netflix-n-logo-0F1ED3EBEB-seeklogo.com.png"
       type="image/x-icon"
@@ -87,15 +91,140 @@
               <a class="nav-link invert" href="./error404.html"
                 ><i class="fas fa-bell"></i
               ></a>
-              <a class="nav-link invert" href="./login.html"
-                ><i class="fas fa-user-circle"></i
-              ></a>
+              <div>
+                <!-- Button trigger modal -->
+                <button
+                  id="btnLogin"
+                  type="button"
+                  class="text-center"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal"
+                >
+                  <i class="fas fa-user-circle"></i>
+                </button>
+              </div>
             </div>
           </div>
         </nav>
       </div>
     </header>
     <main class="d-flex flex-column">
+      <!-- Modal de login-->
+      <div
+        class="modal fade"
+        id="modal"
+        tabindex="-1"
+        aria-labelledby="ModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="section blurred-background">
+              <div class="container content">
+                <div class="row justify-content-center">
+                  <div class="col-12 text-center align-self-center py-5">
+                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                      <h6 class="mb-0 pb-3 rojo-netflix">
+                        <span>Ingresar</span><span>Registrarse</span>
+                      </h6>
+                      <input
+                        class="checkbox"
+                        type="checkbox"
+                        id="reg-log"
+                        name="reg-log"
+                      />
+                      <label for="reg-log"></label>
+                      <div class="card-3d-wrap mx-auto">
+                        <div class="card-3d-wrapper">
+                          <div class="card-front">
+                            <div class="center-wrap">
+                              <div class="section text-center">
+                                <h4 class="mb-4 pb-3 rojo-netflix">Ingresar</h4>
+                                <div class="form-group">
+                                  <input
+                                    type="email"
+                                    name="logemail"
+                                    class="form-style"
+                                    placeholder="Email"
+                                    id="logemail"
+                                    autocomplete="off"
+                                  />
+                                  <i class="input-icon uil uil-at"></i>
+                                </div>
+                                <div class="form-group mt-2">
+                                  <input
+                                    type="password"
+                                    name="logpass"
+                                    class="form-style"
+                                    placeholder="Contraseña"
+                                    id="logpass"
+                                    autocomplete="off"
+                                  />
+                                  <i class="input-icon uil uil-lock-alt"></i>
+                                </div>
+                                <a href="#" class="btn mt-4">Iniciar sesión</a>
+                                <p class="mb-0 mt-4 text-center">
+                                  <a href="./pages/error404.html" class="link"
+                                    >Olvidaste tu contraseña?</a
+                                  >
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card-back">
+                            <div class="center-wrap">
+                              <div class="section text-center">
+                                <h4 class="mb-4 pb-3 rojo-netflix">
+                                  Registrarse
+                                </h4>
+                                <div class="form-group">
+                                  <input
+                                    type="text"
+                                    name="logname"
+                                    class="form-style"
+                                    placeholder="Tu nombre"
+                                    id="logname"
+                                    autocomplete="off"
+                                  />
+                                  <i class="input-icon uil uil-user"></i>
+                                </div>
+                                <div class="form-group mt-2">
+                                  <input
+                                    type="email"
+                                    name="logemail"
+                                    class="form-style"
+                                    placeholder="Email"
+                                    id="logemail"
+                                    autocomplete="off"
+                                  />
+                                  <i class="input-icon uil uil-at"></i>
+                                </div>
+                                <div class="form-group mt-2">
+                                  <input
+                                    type="password"
+                                    name="logpass"
+                                    class="form-style"
+                                    placeholder="contraseña"
+                                    id="logpass"
+                                    autocomplete="off"
+                                  />
+                                  <i class="input-icon uil uil-lock-alt"></i>
+                                </div>
+                                <a href="#" class="btn mt-4">Enviar</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Cards de presentacion -->
       <div class="my-5 col-12 d-flex justify-content-center">
         <h1>Nuestro equipo</h1>
       </div>
