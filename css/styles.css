@@ -65,55 +65,55 @@ main {
     }
   }
 }
-  /* ---- ----- ----- Footer ----- ----- ----- */
-  footer {
+/* ---- ----- ----- Footer ----- ----- ----- */
+.footer {
   border-top: 1px solid var(--background);
 }
 
-footer ul {
+.footer ul {
   padding: 0;
   list-style: none;
   text-align: center;
 }
 
-footer ul li {
+.footer ul li {
   margin-bottom: 10px;
 }
 
-footer ul li a {
+.footer ul li a {
   color: var(--secondary);
   text-decoration: none;
 }
 
-footer ul li a:hover {
+.footer ul li a:hover {
   text-decoration: underline;
 }
 
-footer .social-icon {
+.footer .social-icon {
   font-size: 1.5em;
   margin: 0 10px;
   color: #ccc;
   text-decoration: none;
 }
 
-footer .social-icon:hover {
+.footer .social-icon:hover {
   color: #ffffff;
 }
 
-footer p {
+.footer p {
   margin: 0;
   font-size: 0.9em;
   color: var(--secondary);
 }
 
-footer button {
+.footer button {
   border: 1px solid var(--secondary);
   color: var(--secondary);
   padding: 5px 10px;
   cursor: pointer;
 }
 
-footer button:hover {
+.footer button:hover {
   color: #ffffff;
   border-color: #ffffff;
 }
