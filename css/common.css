@@ -9,11 +9,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #424242;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #bb0000;
+  background-color: var(--red);
   border-radius: 10px;
 }
 
@@ -24,6 +24,7 @@
 header {
   transition: background-color 0.1s;
   background-color: rgba(0, 0, 0, 0.7);
+  font-size: 0.9rem;
 }
 
 main {
@@ -38,6 +39,9 @@ body {
   font-size: larger;
 }
 
+footer{
+  font-size: 0.8rem;
+}
 h1,
 h2,
 p,
@@ -70,9 +74,6 @@ label {
 }
 .navbar-nav .nav-item .nav-link:hover {
   color: #b3b3b3;
-}
-.navbar-nav .nav-item .nav-link i {
-  font-size: 1.2rem;
 }
 
 .custom-input {
