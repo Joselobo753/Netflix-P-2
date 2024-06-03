@@ -1,0 +1,26 @@
+.portada404 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%),
+    url(../resources/p404/AR-es-20240527-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+  font-size: 16px;
+  min-height: 52rem;
+  color: #ffffff;
+  background-position: center center;
+  background-size: cover;
+}
+
+h2 {
+  font-size: 80px;
+}
+
+.msg404 {
+  font-size: xx-large;
+}
+
+.link404 {
+  text-decoration: none;
+  color: white;
+  background-color: #db0000;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: xx-large;
+}

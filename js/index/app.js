@@ -73,4 +73,93 @@ document.querySelectorAll(".peliculas-carousel").forEach((carousel) => {
   }
 });
 
+//PELICULA DESTACADA
+const $fondoPrincipal = document.querySelector("#fondoPrincipal");
+const $tituloPrincipal = document.querySelector("#tituloPrincipal");
+const $descripcionPrincipal = document.querySelector("#descripcionPrincipal");
 
+/* 
+Falta llamar al objeto del LS u obtener el objeto de otro lado
+ */
+
+//$fondoPrincipal.style.backgroundImage = `url(${nuevaImagenFondo})`;
+//$tituloPrincipal.textContent = `${titulo}`;
+//$descripcionPrincipal.textContent = `${descripcion}`;
+
+//ESTRUCTURA CARD A ENCERRAR EN UN FOREACH
+/* 
+const $card = document.createElement("div");
+$card.classList.add("pelicula");
+const $linkPelicula = document.createElement("a");
+$linkPelicula.href = `${inserteLinkPelicula}`;
+const $portadaPelicula = document.createElement("img");
+$portadaPelicula.src = `${inserteLinkPortada}`;
+$portadaPelicula.alt = `${inserteDescripcion}`;
+*/
+
+//ESTRUCTURA CAROUSEL COMPLETO
+/*
+Se crean los dos contenedores que contrendan a las cartas
+const $carouselContainer1 = document.createElement("div");
+$carouselContainer1.classList.add("carousel");
+const $carouselContainer2 = document.createElement("div");
+$carouselContainer2.classList.add("carousel-container");
+
+Se crean las cartas y se mete todo dentro uno de otro
+APLICAR FOREACH
+const $card = document.createElement("div");
+$card.classList.add("pelicula");
+const $linkPelicula = document.createElement("a");
+$linkPelicula.href = `${inserteLinkPelicula}`;
+const $portadaPelicula = document.createElement("img");
+$portadaPelicula.src = `${inserteLinkPortada}`;
+$portadaPelicula.alt = `${inserteDescripcion}`;
+$linkPelicula.appendChild($portadaPelicula);
+$card.appendChild($linkPelicula);
+$carouselContainer1.appendChild($card);
+
+Por aparte se hace el appenChild al Container2
+$carouselContainer2.appendChild($carouselContainer1)
+
+Se crean los botones
+Boton Izquierdo
+const $btnL = document.createElement("button");
+$btnL.role = "button";
+$btnL.classList.add("flecha-izquierda");
+const $iconoL = document.createElement("i");
+$iconoL.classList("fas", "fa-angle-left");
+$btnL.appendChild("iconoL");
+Boton Derecho
+const $btnR = document.createElement("button");
+$btnR.role = "button";
+$btnR.classList.add("flecha-derecha");
+const $iconoR = document.createElement("i");
+$iconoR.classList("fas", "fa-angle-right");
+$btnR.appendChild("iconoR");
+
+Se crea el contenedor principal y se guarda todo dentro EN ORDEN
+const $contenedorPrincipal = document.createElement("div");
+$contenedorPrincipal.classList.add("contenedor-principal");
+$contenedorPrincipal.appendChild($btnL);
+$contenedorPrincipal.appendChild($carouselContainer2);
+$contenedorPrincipal.appendChild($btnR);
+
+Se crea el contenedor del titulo con los indicadores
+const $h5 = document.createElement("h5");
+$h5.textContent(`${Titulo}`);
+const $indicadores = document.createElement("div");
+$indicadores.classList.add("indicadores");
+const $contenedorTituloControles = document.createElement("div");
+$contenedorTituloControles.classList.add("contenedor-titulo-controles");
+$contenedorTituloControles.appendChild($h5);
+$contenedorTituloControles.appendChild($indicadores);
+
+Se crea el ultimo contenedor que seria el carousel en si mismo
+const $carousel = document.createElement("div");
+$carousel.id = `${inserteID}`;
+$carousel.classList.add("peliculas-carousel", "contenedor");
+$carousel.appendChild($contenedorTituloControles);
+$carousel.appendChild($contenedorPrincipal);
+
+Y ya estaria listo para integrarse al main con un appendChild
+          */

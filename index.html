@@ -68,7 +68,7 @@
                 <a class="nav-link" href="./pages/error404.html">Series</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/error404.html">Películas</a>
+                <a class="nav-link" href="./pages/admin.html">Películas</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./pages/error404.html"
@@ -153,9 +153,9 @@
                                   <input
                                     type="email"
                                     name="logemail"
-                                    class="form-style"
+                                    class="form-style form-control"
                                     placeholder="Email"
-                                    id="logemail"
+                                    id="logssemail"
                                     autocomplete="off"
                                   />
                                   <i class="input-icon uil uil-at"></i>
@@ -164,14 +164,16 @@
                                   <input
                                     type="password"
                                     name="logpass"
-                                    class="form-style"
+                                    class="form-style form-control"
                                     placeholder="Contraseña"
-                                    id="logpass"
+                                    id="logsspass"
                                     autocomplete="off"
                                   />
                                   <i class="input-icon uil uil-lock-alt"></i>
                                 </div>
-                                <a href="#" class="btn mt-4">Iniciar sesión</a>
+                                <a id="btnIS" href="#" class="btn mt-4">
+                                  Iniciar sesión
+                                </a>
                                 <p class="mb-0 mt-4 text-center">
                                   <a href="./pages/error404.html" class="link"
                                     >Olvidaste tu contraseña?</a
@@ -190,7 +192,7 @@
                                   <input
                                     type="text"
                                     name="logname"
-                                    class="form-style"
+                                    class="form-style form-control"
                                     placeholder="Tu nombre"
                                     id="logname"
                                     autocomplete="off"
@@ -201,7 +203,7 @@
                                   <input
                                     type="email"
                                     name="logemail"
-                                    class="form-style"
+                                    class="form-style form-control"
                                     placeholder="Email"
                                     id="logemail"
                                     autocomplete="off"
@@ -212,14 +214,16 @@
                                   <input
                                     type="password"
                                     name="logpass"
-                                    class="form-style"
-                                    placeholder="contraseña"
+                                    class="form-style form-control"
+                                    placeholder="Contraseña"
                                     id="logpass"
                                     autocomplete="off"
                                   />
                                   <i class="input-icon uil uil-lock-alt"></i>
                                 </div>
-                                <a href="#" class="btn mt-4">Enviar</a>
+                                <a id="btnRegistro" href="#" class="btn mt-4"
+                                  >Registrarme</a
+                                >
                               </div>
                             </div>
                           </div>
@@ -234,10 +238,10 @@
         </div>
       </div>
       <!-- Index -->
-      <div class="pelicula-principal">
+      <div id="fondoPrincipal" class="pelicula-principal">
         <div class="container">
-          <h5 class="titulo">Interestellar</h5>
-          <p class="descripcion">
+          <h5 id="tituloPrincipal" class="titulo">Interestellar</h5>
+          <p id="descripcionPrincipal" class="descripcion">
             Narra las aventuras de un grupo de exploradores que hacen uso de un
             agujero de gusano recientemente descubierto para superar las
             limitaciones de los viajes espaciales tripulados y vencer las
@@ -712,6 +716,8 @@
       src="https://kit.fontawesome.com/3926a4efb9.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="./js/login/login.js"></script>
     <script type="module" src="./js/common.js"></script>
     <script type="module" src="./js/index/app.js"></script>
   </body>
