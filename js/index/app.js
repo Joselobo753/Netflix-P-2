@@ -1,3 +1,4 @@
+import { obtenerPeliculasDeLS } from "../utils.js";
 // ----- ----- Event Listener para scroll. ----- -----
 window.addEventListener("scroll", function () {
   const navbar = document.getElementById("navbar");
@@ -73,18 +74,35 @@ document.querySelectorAll(".peliculas-carousel").forEach((carousel) => {
   }
 });
 
-//PELICULA DESTACADA
+cargarPaginaPrincipal()
+export function cargarPaginaPrincipal(){
 const $fondoPrincipal = document.querySelector("#fondoPrincipal");
 const $tituloPrincipal = document.querySelector("#tituloPrincipal");
 const $descripcionPrincipal = document.querySelector("#descripcionPrincipal");
+
+  const peliculas = obtenerPeliculasDeLS()
+peliculas.forEach((pelicula)=>{
+  if (pelicula.destacada=== true) {
+  $fondoPrincipal.style.backgroundImage = `url(${pelicula.caratula})`;
+  $tituloPrincipal.textContent = `${pelicula.titulo}`;
+  $descripcionPrincipal.textContent = `${pelicula.descripcion}` 
+  }
+  
+})}
+//PELICULA DESTACADA
+const $card = document.createElement("div");
+  $card.classList.add("pelicula");
+  const $linkPelicula = document.createElement("a");
+  $linkPelicula.href = `./pages/error404.html`;
+  const $portadaPelicula = document.createElement("img");
+  $portadaPelicula.src = `${pelicula.caratula}`;
+  $portadaPelicula.alt = `${pelicula.nombre}`
 
 /* 
 Falta llamar al objeto del LS u obtener el objeto de otro lado
  */
 
-//$fondoPrincipal.style.backgroundImage = `url(${nuevaImagenFondo})`;
-//$tituloPrincipal.textContent = `${titulo}`;
-//$descripcionPrincipal.textContent = `${descripcion}`;
+;
 
 //ESTRUCTURA CARD A ENCERRAR EN UN FOREACH
 /* 
