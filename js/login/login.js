@@ -2,8 +2,7 @@ import { estaLogueado } from "../utils.js";
 import { Usuario } from "./Usuario.js";
 import { validateEmail, validateNombre, validatePss } from "../validadores.js";
 
-const currentURL = window.location.href;
-console.log(currentURL);
+const pageTitle = document.title;
 
 const $btnLogin = document.querySelector("#btnLogin");
 const $logemail = document.querySelector("#logemail");
@@ -20,10 +19,12 @@ const usuarioAdmin = new Usuario("admin", "admin12345");
 //Boton que redirije a admin si esta logueado
 $btnLogin.addEventListener("click", () => {
   if (estaLogueado()) {
-    if (currentURL === "index.html") {
+    if (pageTitle === "Netflix") {
       window.location.replace("./pages/admin.html");
+      return;
     }
     window.location.replace("./admin.html");
+    return;
   }
 
   return;
@@ -51,10 +52,12 @@ $btnRegistro.addEventListener("click", () => {
     return;
   }
 
-  if (currentURL === "index.html") {
+  if (pageTitle === "Netflix") {
     window.location.replace("./pages/error404.html");
+    return;
   }
   window.location.replace("./error404.html");
+  return;
 });
 
 //Login
@@ -62,8 +65,10 @@ $btnIS.addEventListener("click", () => {
   let email = $logssemail.value;
   let pass = $logsspass.value;
   if (email === usuarioAdmin.email && pass === usuarioAdmin.contrasenia) {
-    if (currentURL === "index.html") {
+    if (pageTitle === "Netflix") {
       window.location.replace("./pages/admin.html");
+      sessionStorage.setItem("estaLogueado", true);
+      return;
     }
     window.location.replace("./admin.html");
     sessionStorage.setItem("estaLogueado", true);
