@@ -1,7 +1,7 @@
 /* 
 const con los ids, validaciones al blur y al submit y boton resetear
  */
-import { validateNombre, validateEmail, validateMsg } from "./validators.js";
+import { validateNombre, validateEmail, validateMsg } from "../validadores.js";
 import { MensajeContacto } from "./MensajeContacto.js";
 import { agregarALS, enviarMail, resetInput } from "../utils.js";
 

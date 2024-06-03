@@ -146,9 +146,9 @@
                                   <input
                                     type="email"
                                     name="logemail"
-                                    class="form-style"
+                                    class="form-style form-control"
                                     placeholder="Email"
-                                    id="logemail"
+                                    id="logssemail"
                                     autocomplete="off"
                                   />
                                   <i class="input-icon uil uil-at"></i>
@@ -157,14 +157,16 @@
                                   <input
                                     type="password"
                                     name="logpass"
-                                    class="form-style"
+                                    class="form-style form-control"
                                     placeholder="Contraseña"
-                                    id="logpass"
+                                    id="logsspass"
                                     autocomplete="off"
                                   />
                                   <i class="input-icon uil uil-lock-alt"></i>
                                 </div>
-                                <a href="#" class="btn mt-4">Iniciar sesión</a>
+                                <a id="btnIS" href="#" class="btn mt-4">
+                                  Iniciar sesión
+                                </a>
                                 <p class="mb-0 mt-4 text-center">
                                   <a href="./pages/error404.html" class="link"
                                     >Olvidaste tu contraseña?</a
@@ -183,7 +185,7 @@
                                   <input
                                     type="text"
                                     name="logname"
-                                    class="form-style"
+                                    class="form-style form-control"
                                     placeholder="Tu nombre"
                                     id="logname"
                                     autocomplete="off"
@@ -194,7 +196,7 @@
                                   <input
                                     type="email"
                                     name="logemail"
-                                    class="form-style"
+                                    class="form-style form-control"
                                     placeholder="Email"
                                     id="logemail"
                                     autocomplete="off"
@@ -205,14 +207,16 @@
                                   <input
                                     type="password"
                                     name="logpass"
-                                    class="form-style"
-                                    placeholder="contraseña"
+                                    class="form-style form-control"
+                                    placeholder="Contraseña"
                                     id="logpass"
                                     autocomplete="off"
                                   />
                                   <i class="input-icon uil uil-lock-alt"></i>
                                 </div>
-                                <a href="#" class="btn mt-4">Enviar</a>
+                                <a id="btnRegistro" href="#" class="btn mt-4"
+                                  >Registrarme</a
+                                >
                               </div>
                             </div>
                           </div>
@@ -306,5 +310,7 @@
       src="https://kit.fontawesome.com/3926a4efb9.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/login/login.js"></script>
   </body>
 </html>
