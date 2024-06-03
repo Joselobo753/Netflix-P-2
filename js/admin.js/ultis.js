@@ -1,9 +1,10 @@
 import { obtenerPeliculasDeLS } from "../utils.js";
-import { eliminarPelicula } from "./abm.js";
+import { editarCategoria, eliminarCategoria, eliminarPelicula } from "./abm.js";
+import { mostrarCategorias } from "./app.js";
 import { pelicula } from "./objs/Pelicula.js";
 
 export const agregarPeliculaALS = (pelicula) => {
-  const peliculas = obtenerPeliculas();
+  const peliculas = obtenerPeliculasDeLS();
   peliculas.push(pelicula);
   localStorage.setItem("pelicula", JSON.stringify(peliculas));
 };
@@ -32,42 +33,48 @@ const cargarFilaTabla = (pelicula, indice) => {
   
   const $tdTitulo = document.createElement("td");
   $tdTitulo.textContent = pelicula.titulo;
-  $tr.appendChild($tdNombre);
+  $tr.appendChild($tdTitulo);
 
   
   const $tdTipo = document.createElement("td");
   $tdTipo.textContent = pelicula.tipo;
-  $tr.appendChild($tdNumero);
+  $tr.appendChild($tdTipo);
 
   
   const $tdTrailer = document.createElement("td");
   const $aTrailer = document.createElement("a");
   $aTrailer.href = `${pelicula.trailer}`;
   $aTrailer.textContent = "Trailer";
-  $tdTrailer.appendChild($aEmail);
+  $tdTrailer.appendChild($aTrailer);
   $tr.appendChild($tdTrailer)
 
 
   const $tdDescripcion = document.createElement("td");
   $tdDescripcion.textContent = pelicula.descripcion;
-  $tr.appendChild($tdNotas);
+  $tr.appendChild($tdDescripcion);
 
 
   const $tdAcciones = document.createElement("td");
   const $btnEditar = document.createElement("button");
   const $btnEliminar = document.createElement("button");
+  const $destacada = document.createElement("button")
+  
   $btnEditar.classList.add("btn", "btn-sm", "btn-warning", "me-2");
   $btnEliminar.classList.add("btn", "btn-sm", "btn-danger");
+  $destacada.classList.add("btn", "btn-sm", "btn-warning", "me-2");
   $btnEditar.textContent = "Editar";
   $btnEliminar.textContent = "Eliminar";
+  $destacada.textContent = "Destacar"
   $btnEditar.onclick = () => {
     prepararEdicionPelicula(pelicula);
   };
   $btnEliminar.onclick = () => {
     eliminarPelicula(pelicula.codigo, pelicula.nombre);
   };
+ 
   $tdAcciones.appendChild($btnEditar);
   $tdAcciones.appendChild($btnEliminar);
+  $tdAcciones.appendChild($destacada)
   $tr.appendChild($tdAcciones);
 
   $tbody.appendChild($tr);
@@ -75,12 +82,12 @@ const cargarFilaTabla = (pelicula, indice) => {
 
 
 
-export const cargarTabla = () => {
+export const cargarTablaPeliculas = () => {
 
   const peliculas = obtenerPeliculasDeLS();
 
   const $tbody = document.getElementById("tbody-peliculas");
-  $tbody.innerHTML = "";
+  $tbody.innerHTML = ``;
 
  
   peliculas.forEach((pelicula, indice) => {
@@ -108,8 +115,8 @@ const $inputDescripcion = document.getElementById("descripcion")
   sessionStorage.setItem("codigoPelicula", pelicula.codigo);
 
   // 4. Mostrar alert
-  const $alert = document.getElementById("alert-edicion-contacto");
-  const $spanPelicula = document.getElementById("nombre-contacto-edicion");
+  const $alert = document.getElementById("alert-edicion-peli");
+  const $spanPelicula = document.getElementById("peli-edicion");
   $alert.classList.remove("d-none");
   $spanPelicula.textContent = pelicula.titulo;
 
@@ -120,6 +127,51 @@ const $inputDescripcion = document.getElementById("descripcion")
 };
 
 export const estaEditando = () => {
-
-  return !!sessionStorage.getItem("codigoPelicula");
+const verificar = document.getElementById("alert-edicion-peli")
+return !!verificar.classList.contains("d-none")
 };
+export function cargartabla() {
+  const categorias = leerCategorias();
+  const tbody = document.getElementById('tablaCategorias').querySelector('tbody');
+  tbody.innerHTML = '';
+  categorias.forEach(categoria => {
+      const tr = document.createElement('tr');
+      
+      const tdNombre = document.createElement('td');
+      tdNombre.textContent = categoria.nombre;
+      tr.appendChild(tdNombre);
+
+      const tdCalificacion = document.createElement('td');
+      tdCalificacion.textContent = categoria.calificacion;
+      tr.appendChild(tdCalificacion);
+
+      const tdAcciones = document.createElement('td');
+      const btnEditar = document.createElement('button');
+      btnEditar.textContent = 'Editar';
+      btnEditar.onclick = () => editarCategoria(categoria.codigo);
+      tdAcciones.appendChild(btnEditar);
+
+      const btnEliminar = document.createElement('button');
+      btnEliminar.textContent = 'Eliminar';
+      btnEliminar.onclick = () => {
+          eliminarCategoria(categoria.codigo,categoria.nombre);
+          mostrarCategorias();
+      };
+      tdAcciones.appendChild(btnEliminar);
+
+      tr.appendChild(tdAcciones);
+      tbody.appendChild(tr);
+  });
+}
+
+export function leerCategorias() {
+  return cargarCategorias();
+}
+export function cargarCategorias() {
+  const categoriasJSON = localStorage.getItem('categorias');
+  return categoriasJSON ? JSON.parse(categoriasJSON) : [];
+}
+
+ export function guardarCategorias(categorias) {
+  localStorage.setItem('categorias', JSON.stringify(categorias));
+}

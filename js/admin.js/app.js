@@ -1,9 +1,10 @@
 import { validateImg, validateTexto, validateUrl } from "../validadores.js";
-import { cargarTabla } from "./ultis.js";
+import { agregarPelicula, crearCategoria, editarPelicula } from "./abm.js";
+import { cargarTablaPeliculas, cargartabla, estaEditando, leerCategorias } from "./ultis.js";
 
 
 
-cargarTabla();
+cargarTablaPeliculas();
 
 
 
@@ -27,9 +28,9 @@ $inputDescripcion.addEventListener("blur",()=>{
     validateTexto($inputDescripcion)
 })
 
-$form.addEventListener("submit",(e)=>{
+$form.addEventListener("click",(e)=>{
     e.preventDefault();
-    if (
+    /* if (
         !validateTexto($inputNombre)||
         !validateImg($inputCaratula)||
         !validateUrl($inputTrailer)||
@@ -38,30 +39,34 @@ $form.addEventListener("submit",(e)=>{
         alert("Revisar los campos")
         return;
     }
-    const titulo = $inputNombre.value
+*/    const titulo = $inputNombre.value
     const tipo = $inputTipo.value
     const caratula = $inputCaratula.value
     const trailer = $inputCaratula.value
     const descripcion = $inputDescripcion.value
+ if (estaEditando()) {
+    agregarPelicula(titulo,tipo,caratula,trailer,descripcion)
+    
+ }else{
+    editarPelicula(titulo,tipo,caratula,trailer,descripcion)
+}
+   
 
-    (titulo,tipo,caratula,trailer,descripcion)
 
-
-$form.reset();
+    document.getElementById("formularioPeliculas").reset();
   $inputNombre.classList.remove('is-valid', 'is-invalid');
   $inputTipo.classList.remove('is-valid', 'is-invalid');
   $inputCaratula.classList.remove('is-valid', 'is-invalid');
   $inputTrailer.classList.remove('is-valid', 'is-invalid');
   $inputDescripcion.classList.remove('is-valid', 'is-invalid');
 
-  // D. Actualizar tabla
+  
 
-  cargarTabla();
+  cargarTablaPeliculas();
 
-  // E. Notificar al usuario
+  
 
   let mensaje = `Nueva pelicula creada`;
-  if (estaEditando()) mensaje = 'Pelicula editado exitosamente';
 
   swal.fire({
     title: 'Exito',
@@ -69,6 +74,30 @@ $form.reset();
     icon: 'success',
     showConfirmButton: true,
     showCancelButton: false,
-    confirmButtonText: 'Tremen2',
+    confirmButtonText: 'Genial',
   });
 });
+
+document.getElementById('categoriaForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const nombre = document.getElementById('nombreCat').value;
+    const calificacion = document.getElementById('calificacion').value;
+    crearCategoria(nombre,calificacion);
+    mostrarCategorias();
+    cargartabla()
+    document.getElementById('categoriaForm').reset();
+});
+
+export function mostrarCategorias() {
+    const categorias = leerCategorias();
+    const selectCategoria = document.getElementById('categoria');
+    selectCategoria.innerHTML = '';
+    categorias.forEach(categoria => {
+        const option = document.createElement('option');
+        option.value = categoria.codigo;
+        option.textContent = categoria.nombre;
+        selectCategoria.appendChild(option);
+    });
+}
+mostrarCategorias();
+cargartabla()
