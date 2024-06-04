@@ -1,4 +1,9 @@
 import { obtenerPeliculasDeLS } from "../utils.js";
+
+
+
+
+
 // ----- ----- Event Listener para scroll. ----- -----
 window.addEventListener("scroll", function () {
   const navbar = document.getElementById("navbar");
@@ -11,19 +16,17 @@ window.addEventListener("scroll", function () {
   }
 });
 
-const crearCarrusel = (titulo) => {
+const crearCarrusel = (titulo, peliculas) => {
   const $carouselContainer1 = document.createElement("div");
   $carouselContainer1.classList.add("carousel");
   const $carouselContainer2 = document.createElement("div");
   $carouselContainer2.classList.add("contenedor-carousel");
 
-  const arregloPelicula = obtenerPeliculasDeLS();
-
-  arregloPelicula.forEach((pelicula) => {
+  peliculas.forEach((pelicula) => {
     const $card = document.createElement("div");
     $card.classList.add("pelicula");
     const $linkPelicula = document.createElement("a");
-    $linkPelicula.href = `${pelicula.trailer}`;
+    $linkPelicula.href = `./pages/ver.html?codigo=${pelicula.codigo}`;
     const $portadaPelicula = document.createElement("img");
     $portadaPelicula.src = `${pelicula.caratula}`;
     $portadaPelicula.alt = `${pelicula.descripcion}`;
@@ -64,7 +67,6 @@ const crearCarrusel = (titulo) => {
   $contenedorTituloControles.appendChild($indicadores);
 
   const $carousel = document.createElement("div");
-
   $carousel.classList.add("peliculas-carousel", "contenedor");
   $carousel.appendChild($contenedorTituloControles);
   $carousel.appendChild($contenedorPrincipal);
@@ -73,7 +75,26 @@ const crearCarrusel = (titulo) => {
   $main.appendChild($carousel);
 };
 
-crearCarrusel("titulo");
+// Main function to create all carousels
+const crearTodosLosCaruseles = () => {
+  const peliculas = obtenerPeliculasDeLS();
+  const categorias = JSON.parse(localStorage.getItem("categorias"));
+
+  // Predefined categories
+  const predefinedCategories = [ "Recomendación de Eze"];
+  predefinedCategories.forEach(categoria => {
+    crearCarrusel(categoria, peliculas);
+  });
+
+  // Additional categories from local storage
+  categorias.forEach(categoria => {
+    const peliculasFiltradas = peliculas.filter(pelicula => pelicula.categoria === categoria.nombre);
+    crearCarrusel(categoria.nombre, peliculasFiltradas);
+  });
+};
+
+// Call the main function to create all carousels
+crearTodosLosCaruseles();
 // ----- ----- Carrusel. ----- -----
 document.querySelectorAll(".peliculas-carousel").forEach((carousel) => {
   const fila = carousel.querySelector(".contenedor-carousel");

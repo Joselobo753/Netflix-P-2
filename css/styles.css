@@ -56,11 +56,26 @@ main {
   & div {
     & img {
       object-fit: cover;
+    }  
+  }
+  & .tabla-pelis {
+    background-color: var(--background);
+    & .accordion-button {
+      color: #ffffff;
+      background-color: var(--background);
     }
-    & .bred {
-      background-color: var(--red);
-      &:hover {
-        background: #db000088;
+    & .accordion-body {
+      color: #ffffff;
+      background-color: #222222;
+      & tr,
+      th,
+      td {
+        font-size: 1rem;
+        color: #ffffff;
+        background-color: #222222;
+        & a {
+          color: #ffffff;
+        }
       }
     }
   }

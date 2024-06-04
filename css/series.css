@@ -1,0 +1,13 @@
+.imgPelicula {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.contenedorCards {
+  flex-wrap: wrap;
+}
+
+.cardPelicula {
+  margin-top: 20px;
+}

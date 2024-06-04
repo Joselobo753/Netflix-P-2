@@ -1,6 +1,19 @@
 import { obtenerPeliculasDeLS } from "./utils.js";
 
 const $header = document.querySelector("header");
+const pageTitle = document.title;
+
+if (pageTitle === "Administrador") {
+  const $btnLogin = document.querySelector("#btnLogin");
+  const $btnCerrar = document.querySelector("#btnCerrar");
+  $btnCerrar.classList.remove("d-none");
+  $btnLogin.classList.add("d-none");
+  $btnCerrar.addEventListener("click", (event) => {
+    event.preventDefault();
+    sessionStorage.removeItem("estaLogueado");
+    window.location.replace("../index.html");
+  });
+}
 
 window.addEventListener("scroll", () => {
   let scroll = window.scrollY;
@@ -11,32 +24,36 @@ window.addEventListener("scroll", () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const searchInput = document.getElementById('searchInput');
-  const searchResults = document.getElementById('searchResults');
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("searchInput");
+  const searchResults = document.getElementById("searchResults");
 
-  searchInput.addEventListener('input', () => {
+  searchInput.addEventListener("input", () => {
     const term = searchInput.value.toLowerCase();
     const peliculas = obtenerPeliculasDeLS();
-    
-    const filteredPeliculas = peliculas.filter(pelicula => 
-      pelicula.titulo.toLowerCase().includes(term) || 
-      pelicula.categoria.toLowerCase().includes(term)
+
+    const filteredPeliculas = peliculas.filter(
+      (pelicula) =>
+        pelicula.titulo.toLowerCase().includes(term) ||
+        pelicula.categoria.toLowerCase().includes(term)
     );
 
     // Limpiar los resultados anteriores
-    searchResults.innerHTML = '';
+    searchResults.innerHTML = "";
 
     // Mostrar los resultados filtrados
-    filteredPeliculas.forEach(pelicula => {
-      const listItem = document.createElement('li');
-      listItem.classList.add('list-group-item');
-      listItem.textContent = `${pelicula.titulo}`;
-      listItem.addEventListener('click', () => {
-        // window.location.href = `/path_to_your_movie_page/${pelicula.id}`; // Ajustar el path 
-      });
+    filteredPeliculas.forEach((pelicula) => {
+      const listItem = document.createElement("li");
+      listItem.classList.add("list-group-item");
+      const listA = document.createElement("a");
+      if (pageTitle === "Netflix") {
+        listA.href = `./pages/ver.html?codigo=${pelicula.codigo}`;
+      } else {
+        listA.href = `./ver.html?codigo=${pelicula.codigo}`;
+      }
+      listA.textContent = `${pelicula.titulo}`;
+      listItem.appendChild(listA);
       searchResults.appendChild(listItem);
     });
   });
 });
-

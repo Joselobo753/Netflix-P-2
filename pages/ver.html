@@ -17,20 +17,18 @@
     ></script>
     <link rel="stylesheet" href="../css/ver.css" />
     <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <script
       src="https://kit.fontawesome.com/b0e97ce731.js"
       crossorigin="anonymous"
     ></script>
     <title>Producto o Serie</title>
   </head>
-  <body>
-    <header class="pelicula-principal">
+  <body class="p-0">
+    <header>
       <div class="justify-content-between">
-        <nav
-          id="navbar"
-          class="navbar navbar-expand-lg navbar-dark fixed-top px-5"
-        >
-          <a class="navbar-brand" href="#">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark px-5">
+          <a class="navbar-brand" href="../index.html">
             <img
               src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
               width="100"
@@ -49,66 +47,101 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
+            <ul class="navbar-nav me-auto d-flex align-items-center">
               <li class="nav-item">
-                <a class="nav-link active" href="#">Inicio</a>
+                <a class="nav-link active" href="../index.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/ver.html">Series</a>
+                <a class="nav-link" href="./series.html">Series</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Películas</a>
+                <a class="nav-link" href="./peliculas.html">Películas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./page/error404.html"
+                <a class="nav-link" href="./error404.html"
                   >Novedades populares</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./page/error404.html">Mi lista</a>
+                <a class="nav-link" href="#">Contactanos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./page/error404.html"
-                  >Explora por idiomas</a
+                <a class="nav-link" href="./nuestroEquipo.html"
+                  >Nuestro equipo</a
                 >
               </li>
             </ul>
-            <div class="d-flex align-items-center ms-auto">
-              <input
-                class="form-control me-2 custom-input"
-                type="search"
-                aria-label="Search"
-              />
-              <a class="nav-link search-icon" href="./page/error404.html"
-                ><i class="fas fa-search"></i
-              ></a>
-              <a class="nav-link" href="./page/error404.html"
+            <div
+              class="d-flex justify-content-center align-items-center ms-auto"
+            >
+              <button
+                class="search-btn nav-link"
+                data-bs-toggle="modal"
+                data-bs-target="#searchModal"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+              <a class="nav-link" href="./error404.html"
                 ><i class="fas fa-bell"></i
               ></a>
-              <a class="nav-link" href="#"
-                ><i class="fas fa-user-circle"></i
-              ></a>
+              <!-- Button trigger modal -->
+              <a
+                class="ms-2"
+                id="btnLogin"
+                type="button"
+                class="text-center"
+                data-bs-toggle="modal"
+                data-bs-target="#modal"
+              >
+                <i class="fas fa-user-circle"></i>
+              </a>
             </div>
           </div>
         </nav>
       </div>
     </header>
     <main class="d-flex flex-column align-items-center">
+      <!-- Modal del buscador -->
+      <div
+        class="modal fade search-modal"
+        id="searchModal"
+        tabindex="-1"
+        aria-labelledby="searchModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="searchModalLabel">Buscar</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body list-modal">
+              <input
+                type="text"
+                id="searchInput"
+                class="form-control"
+                placeholder="Pelicula o Categoria"
+              />
+              <ul id="searchResults" class="list-group mt-3"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="imagenFondo" class="portada">
         <div
           class="h-100 d-flex flex-column align-items-start justify-content-center mt-5 pt-5 logoPelicula"
         >
           <div class="mt-5 pt-5">
-            <img
-              id="logoPelicula"
-              class="w-50"
-              src="https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABedJbNHpIzA5t19c_F2FX3ooC2sQ5jlx9gYjvcL9RiuGSlt9fMM6SlPSMOD8-KVm_4MouAquvYI3_VELkjJTcq3yUXTOlnTY5r8vTCfaI0sa.png?r=1b9"
-              alt="Guerra Mundial Z"
-            />
+            <h2 id="titulog"></h2>
           </div>
           <div class="mt-5 pt-3">
-            <a class="px-1" href="404.html">
-              <button class="btn btn-light">
+            <a class="px-1" href="error404.html">
+              <button class="btn bred">
                 <i class="fa-solid fa-play px-2"></i>Reproducir
               </button>
             </a>
@@ -118,13 +151,15 @@
       <div class="container">
         <div>
           <div>
-            <p>Acerca de <span id="titulo">Guerra Mundial Z</span></p>
-          </div>
-          <div>
             <p>
-              <span id="fechaEstreno">2013</span>
-              <span id="duracion">1 h 57 min</span>
-              <span class="hd"> HD</span>
+              Acerca de <span id="titulo">Guerra Mundial Z</span
+              ><span class="hd"> HD</span>
+            </p>
+          </div>
+          <div class="container mt-3">
+            <p>
+              <span class="apartado">Categorias:</span>
+              <span id="cate">Inserte las categorias en un span</span>
             </p>
           </div>
           <div>
@@ -147,12 +182,6 @@
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
       ></iframe>
-      <div class="container mt-3">
-        <p>
-          <span class="apartado">Categorias:</span>
-          <span>Inserte las categorias en un span</span>
-        </p>
-      </div>
     </main>
     <footer class="footer mt-4 py-4 text-white">
       <div class="container">
@@ -177,36 +206,36 @@
         <div class="row">
           <div class="col-sm-6 col-md-3">
             <ul class="text-start">
-              <li><a href="./page/error404.html">Audio descriptivo</a></li>
+              <li><a href="./error404.html">Audio descriptivo</a></li>
               <li>
-                <a href="./page/error404.html">Relaciones con inversionistas</a>
+                <a href="./error404.html">Relaciones con inversionistas</a>
               </li>
-              <li><a href="./page/error404.html">Avisos legales</a></li>
+              <li><a href="./error404.html">Avisos legales</a></li>
             </ul>
           </div>
           <div class="col-sm-6 col-md-3">
             <ul class="text-start">
-              <li><a href="./page/error404.html">Centro de ayuda</a></li>
-              <li><a href="./page/error404.html">Empleo</a></li>
+              <li><a href="./error404.html">Centro de ayuda</a></li>
+              <li><a href="./error404.html">Empleo</a></li>
               <li>
-                <a href="./page/error404.html">Preferencias de cookies</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <ul class="text-start">
-              <li><a href="./page/error404.html">Tarjetas de regalo</a></li>
-              <li><a href="./page/error404.html">Términos de uso</a></li>
-              <li>
-                <a href="./page/error404.html">Información corporativa</a>
+                <a href="./error404.html">Preferencias de cookies</a>
               </li>
             </ul>
           </div>
           <div class="col-sm-6 col-md-3">
             <ul class="text-start">
-              <li><a href="./page/error404.html">Prensa</a></li>
-              <li><a href="./page/error404.html">Privacidad</a></li>
-              <li><a href="./page/error404.html">Contáctanos</a></li>
+              <li><a href="./error404.html">Tarjetas de regalo</a></li>
+              <li><a href="./error404.html">Términos de uso</a></li>
+              <li>
+                <a href="./error404.html">Información corporativa</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <ul class="text-start">
+              <li><a href="./error404.html">Prensa</a></li>
+              <li><a href="./error404.html">Privacidad</a></li>
+              <li><a href="./error404.html">Contáctanos</a></li>
             </ul>
           </div>
         </div>
@@ -219,6 +248,7 @@
       </div>
     </footer>
     <script type="module" src="../js/common.js"></script>
+    <script type="module" src="../js/login/login.js"></script>
     <script type="module" src="../js/ver/app.js"></script>
   </body>
 </html>
