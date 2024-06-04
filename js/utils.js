@@ -49,7 +49,7 @@ export const enviarMail = (titulo, msg) => {
 };
 
 export const obtenerPeliculasDeLS = () => {
-  return ordenarLista(JSON.parse(localStorage.getItem("pelicula")) || []);
+  return ordenarLista(JSON.parse(localStorage.getItem("peliculas")) || []);
 };
 
 export const estaLogueado = () => {
