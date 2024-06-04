@@ -209,7 +209,7 @@ label {
   border-color: #ffffff;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 995px) {
   header .logotipo {
     margin-bottom: 10px;
     font-size: 30px;
