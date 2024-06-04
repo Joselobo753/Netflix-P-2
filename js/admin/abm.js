@@ -61,6 +61,7 @@ export const editarPelicula = (
   peliculas.splice(posicionPelicula, 1, nuevaPelicula);
 
   localStorage.setItem("peliculas", JSON.stringify(peliculas));
+  location.reload();
 };
 
 export const eliminarPelicula = (idPelicula, nombrePelicula) => {
@@ -110,7 +111,7 @@ export function editarCategoria(codigo) {
     document.getElementById("nombreCat").value = categoria.nombre;
     document.getElementById("calificacion").value = categoria.calificacion;
 
-    document.getElementById("categoriaForm").onsubmit = function (event) {
+    document.getElementById("categoriaForma").onsubmit = function (event) {
       event.preventDefault();
       actualizarCategoria(
         codigo,

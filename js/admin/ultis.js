@@ -54,9 +54,9 @@ const cargarFilaTabla = (pelicula, indice) => {
   const $btnEliminar = document.createElement("button");
   const $destacada = document.createElement("button");
 
-  $btnEditar.classList.add("btn", "btn-sm", "btn-warning", "me-2");
-  $btnEliminar.classList.add("btn", "btn-sm", "btn-danger");
-  $destacada.classList.add("btn", "btn-sm", "btn-warning", "me-2");
+  $btnEditar.classList.add("btn", "btn-sm", "bred", "m-1");
+  $btnEliminar.classList.add("btn", "btn-sm", "bred", "m-1");
+  $destacada.classList.add("btn", "btn-sm", "bred", "m-1");
   $btnEditar.textContent = "Editar";
   $btnEliminar.textContent = "Eliminar";
   $destacada.textContent = "Destacar";
@@ -168,7 +168,7 @@ export function guardarCategorias(categorias) {
   localStorage.setItem("categorias", JSON.stringify(categorias));
 }
 function destacar(codigo) {
-  let peliculas = JSON.parse(localStorage.getItem("pelicula"));
+  let peliculas = JSON.parse(localStorage.getItem("peliculas"));
 
   peliculas.forEach((pelicula) => {
     if (pelicula.codigo !== codigo) {
@@ -178,5 +178,5 @@ function destacar(codigo) {
     }
   });
 
-  localStorage.setItem("pelicula", JSON.stringify(peliculas));
+  localStorage.setItem("peliculas", JSON.stringify(peliculas));
 }

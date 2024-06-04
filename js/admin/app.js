@@ -82,7 +82,7 @@ $form.addEventListener("click", (e) => {
 
 document
   .getElementById("categoriaForm")
-  .addEventListener("submit", function (event) {
+  .addEventListener("click", function (event) {
     event.preventDefault();
     const nombre = document.getElementById("nombreCat").value;
     const calificacion = document.getElementById("calificacion").value;
