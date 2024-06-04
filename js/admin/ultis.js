@@ -64,7 +64,7 @@ const cargarFilaTabla = (pelicula, indice) => {
     prepararEdicionPelicula(pelicula);
   };
   $btnEliminar.onclick = () => {
-    eliminarPelicula(pelicula.codigo, pelicula.nombre);
+    eliminarPelicula(pelicula.codigo);
   };
   $destacada.onclick = () => {
     destacar(pelicula.codigo);
