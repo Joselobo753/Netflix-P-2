@@ -64,11 +64,11 @@ export const editarPelicula = (
   location.reload();
 };
 
-export const eliminarPelicula = (idPelicula, nombrePelicula) => {
+export const eliminarPelicula = (idPelicula) => {
   swal
     .fire({
       title: "Atención",
-      text: `¿Estás seguro que deseas eliminar la pelicula de ${nombrePelicula}? Esta acción es irreversible.`,
+      text: `¿Estás seguro que deseas eliminar la pelicula? Esta acción es irreversible.`,
       icon: "warning",
       showConfirmButton: true,
       showCancelButton: true,
@@ -88,7 +88,7 @@ export const eliminarPelicula = (idPelicula, nombrePelicula) => {
         cargarTablaPeliculas();
         swal.fire({
           title: "Exito",
-          text: `Contacto ${nombrePelicula} eliminado correctamente`,
+          text: `Pelicula eliminada correctamente`,
           icon: "success",
           showConfirmButton: true,
           showCancelButton: false,
@@ -111,7 +111,7 @@ export function editarCategoria(codigo) {
     document.getElementById("nombreCat").value = categoria.nombre;
     document.getElementById("calificacion").value = categoria.calificacion;
 
-    document.getElementById("categoriaForma").onsubmit = function (event) {
+    document.getElementById("categoriaForm").onsubmit = function (event) {
       event.preventDefault();
       actualizarCategoria(
         codigo,

@@ -89,7 +89,7 @@ document
     crearCategoria(nombre, calificacion);
     mostrarCategorias();
     cargartabla();
-    document.getElementById("categoriaForm").reset();
+    document.getElementById("categoriaForma").reset();
   });
 
 export function mostrarCategorias() {
