@@ -179,7 +179,7 @@
           <button
             id="button-cancelar"
             type="button"
-            class="d-none btn btn-secondary"
+            class="d-none btn bred btn-block mt-2"
           >
             Cancelar edicion
           </button>
@@ -198,7 +198,7 @@
           </form>
         </div>
         <div>
-          <div>
+          <div class="mt-4">
             <label for="calificacion">Calificación:</label>
             <select class="form-control" id="calificacion">
               <option value="G">G – General Audiences</option>
@@ -220,7 +220,7 @@
         </div>
       </div>
 
-      <div class="accordion container" id="accordion">
+      <div class="accordion mt-5 container tabla-pelis" id="accordion">
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button
@@ -240,8 +240,8 @@
             data-bs-parent="#accordion"
           >
             <div class="accordion-body">
-              <div class="container">
-                <table>
+              <div class="container-fluid table-responsive">
+                <table class="table">
                   <thead>
                     <tr>
                       <th>ID</th>
