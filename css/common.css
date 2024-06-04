@@ -206,16 +206,6 @@ label {
   }
 }
 
-/* Login */
-
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
-
-#btnLogin {
-  background-color: transparent;
-  border: none;
-  color: #db0b10;
-}
-
 .modal-content {
   background: transparent;
   border: none;
