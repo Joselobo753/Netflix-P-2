@@ -71,30 +71,29 @@
                 <a class="nav-link active" href="../index.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Series</a>
+                <a class="nav-link" href="./error404.html">Series</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Películas</a>
+                <a class="nav-link" href="./error404.html">Películas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Novedades populares</a>
+                <a class="nav-link" href="./error404.html">Novedades populares</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Mi lista</a>
+                <a class="nav-link" href="./contactanos.html">Contactanos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Explora por idiomas</a>
+                <a class="nav-link" href="./nuestroEquipo.html">Nuestro Equipo</a>
               </li>
             </ul>
-            <div class="d-flex align-items-center ms-auto">
-              <input
-                class="form-control me-2 custom-input"
-                type="search"
-                aria-label="Search"
-              />
-              <a class="nav-link search-icon" href="#"
-                ><i class="fas fa-search"></i
-              ></a>
+            <div class="d-flex align-items-center ms-auto text-light">
+              <button
+                class="search-btn nav-link"
+                data-bs-toggle="modal"
+                data-bs-target="#searchModal"
+              >
+                <i class="fas fa-search"></i>
+              </button>
               <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
               <a
                 class="ms-2"
@@ -112,6 +111,37 @@
       </div>
     </header>
     <main>
+      <!-- Modal del buscador -->
+      <div
+        class="modal fade search-modal"
+        id="searchModal"
+        tabindex="-1"
+        aria-labelledby="searchModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="searchModalLabel">Buscar</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body list-modal">
+              <input
+                type="text"
+                id="searchInput"
+                class="form-control"
+                placeholder="Pelicula o Categoria"
+              />
+              <ul id="searchResults" class="list-group mt-3"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="container mt-5 text-white">
         <h2 class="text-center">Cargar Película o Serie</h2>
         <article id="alert-edicion-peli" class="alert alert-warning d-none">
@@ -319,30 +349,30 @@
           <div class="row">
             <div class="col-sm-6 col-md-3">
               <ul class="text-start">
-                <li><a href="#">Audio descriptivo</a></li>
-                <li><a href="#">Relaciones con inversionistas</a></li>
-                <li><a href="#">Avisos legales</a></li>
+                <li><a href="./error404.html">Audio descriptivo</a></li>
+                <li><a href="./error404.html">Relaciones con inversionistas</a></li>
+                <li><a href="./error404.html">Avisos legales</a></li>
               </ul>
             </div>
             <div class="col-sm-6 col-md-3">
               <ul class="text-start">
-                <li><a href="#">Centro de ayuda</a></li>
-                <li><a href="#">Empleo</a></li>
-                <li><a href="#">Preferencias de cookies</a></li>
+                <li><a href="./error404.html">Centro de ayuda</a></li>
+                <li><a href="./error404.html">Empleo</a></li>
+                <li><a href="./error404.html">Preferencias de cookies</a></li>
               </ul>
             </div>
             <div class="col-sm-6 col-md-3">
               <ul class="text-start">
-                <li><a href="#">Tarjetas de regalo</a></li>
-                <li><a href="#">Términos de uso</a></li>
-                <li><a href="#">Información corporativa</a></li>
+                <li><a href="./error404.html">Tarjetas de regalo</a></li>
+                <li><a href="./error404.html">Términos de uso</a></li>
+                <li><a href="./error404.html">Información corporativa</a></li>
               </ul>
             </div>
             <div class="col-sm-6 col-md-3">
               <ul class="text-start">
-                <li><a href="#">Prensa</a></li>
-                <li><a href="#">Privacidad</a></li>
-                <li><a href="#">Contáctanos</a></li>
+                <li><a href="./error404.html">Prensa</a></li>
+                <li><a href="./error404.html">Privacidad</a></li>
+                <li><a href="./error404.html">Contáctanos</a></li>
               </ul>
             </div>
           </div>
@@ -359,4 +389,5 @@
   <script type="module" src="/js/admin/app.js"></script>
   <script type="module" src="/js/admin/objs/Categoria.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="../js/common.js"></script>
 </html>
