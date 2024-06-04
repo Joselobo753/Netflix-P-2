@@ -543,4 +543,8 @@ a:hover {
   iframe {
     width: 280px;
   }
+
+  .btnR {
+    max-width: 200px;
+  }
 }
