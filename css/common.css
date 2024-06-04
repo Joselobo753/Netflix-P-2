@@ -147,7 +147,7 @@ label {
 #searchResults .list-group-item {
   cursor: pointer;
   background-color: var(--background);
-  & a{
+  & a {
     text-decoration: none;
     color: #ffffff;
   }
@@ -537,4 +537,10 @@ a:hover {
   height: 26px;
   width: auto;
   display: block;
+}
+
+@media screen and (max-width: 560px) {
+  iframe {
+    width: 280px;
+  }
 }
