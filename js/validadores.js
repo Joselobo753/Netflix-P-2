@@ -6,7 +6,7 @@ export const validateTexto = ($field) => {
     return false;
   }
 
-  if ($field.value.trim().length < 3 || $field.value.trim().length > 50) {
+  if ($field.value.trim().length < 3 || $field.value.trim().length > 400) {
     invalidInput($field);
     return false;
   }
