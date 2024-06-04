@@ -1,19 +1,29 @@
-/* 
-Armar pagina con appenchild
- */
+const params = new URLSearchParams(window.location.search);
+const codigoPelicula = params.get('codigo');
 
-const $imagenFondo = document.querySelector(".portada");
-const $logoPelicula = document.querySelector("#logoPelicula");
-const $titulo = document.querySelector("#titulo");
-const $fechaEstreno = document.querySelector("#fechaEstreno");
-const $duracion = document.querySelector("#duracion");
-const $descripcion = document.querySelector("#descripcion");
-const $traileraso = document.querySelector("#traileraso");
+const obtenerPeliculasDeLS = () => {
+  // Tu código para obtener las películas desde el localStorage
+  return JSON.parse(localStorage.getItem('peliculas')) || [];
+};
 
-//$imagenFondo.style.backgroundImage = `url(${nuevaImagenFondo})`;
-//$logoPelicula.src = `${urlLogoPelicula}`;
-//$titulo.textContent = `${titulo}`;
-//$fechaEstreno.textContent = `${fechaEstreno}`;
-//$duracion.textContent = `${horas} h ${minutos} m `;
-//$descripcion.textContent = `${descripcion}`;
-//$traileraso.src = `${linkTrailer}`;
+const peliculas = obtenerPeliculasDeLS();
+const pelicula = peliculas.find(p => p.codigo === codigoPelicula);
+
+if (pelicula) {
+  const $imagenFondo = document.querySelector(".portada");
+  
+  const $titulo = document.querySelector("#titulo");
+ 
+  
+  const $descripcion = document.querySelector("#descripcion");
+  const $traileraso = document.querySelector("#traileraso");
+
+  $imagenFondo.style.backgroundImage = `url(${pelicula.caratula})`;
+  
+  $titulo.textContent = pelicula.titulo ; // Suponiendo que tienes una duración
+  $descripcion.textContent = pelicula.descripcion;
+  $traileraso.src = pelicula.trailer;
+} else {
+    window.location.href = "./error404.html";
+  // Puedes redirigir a una página de error o mostrar un mensaje de error
+}

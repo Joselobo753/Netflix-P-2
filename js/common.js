@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       pelicula.titulo.toLowerCase().includes(term) || 
       pelicula.categoria.toLowerCase().includes(term)
     );
-    console.log(peliculas);
+   
 
     // Limpiar los resultados anteriores
     searchResults.innerHTML = '';
@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
     filteredPeliculas.forEach(pelicula => {
       const listItem = document.createElement('li');
       listItem.classList.add('list-group-item');
-      listItem.textContent = `${pelicula.titulo}`;
-      listItem.addEventListener('click', () => {
-        // window.location.href = `/path_to_your_movie_page/${pelicula.id}`; // Ajustar el path 
-      });
+      const listA = document.createElement("a")
+      listA.href = `./pages/ver.html?codigo=${pelicula.codigo}`
+      listA.textContent = `${pelicula.titulo}`;
+      listItem.appendChild(listA)
       searchResults.appendChild(listItem);
     });
   });
