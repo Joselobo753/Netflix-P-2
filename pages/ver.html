@@ -71,36 +71,67 @@
                 >
               </li>
             </ul>
-            <div class="d-flex align-items-center ms-auto">
-              <input
-                class="form-control me-2 custom-input"
-                type="search"
-                aria-label="Search"
-              />
-              <a class="nav-link search-icon invert" href="./error404.html"
-                ><i class="fas fa-search"></i
-              ></a>
-              <a class="nav-link invert" href="./error404.html"
+            <div
+              class="d-flex justify-content-center align-items-center ms-auto"
+            >
+              <button
+                class="search-btn nav-link"
+                data-bs-toggle="modal"
+                data-bs-target="#searchModal"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+              <a class="nav-link invert" href="./pages/error404.html"
                 ><i class="fas fa-bell"></i
               ></a>
-              <div>
-                <!-- Button trigger modal -->
-                <button
-                  id="btnLogin"
-                  type="button"
-                  class="text-center"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modal"
-                >
-                  <i class="fas fa-user-circle"></i>
-                </button>
-              </div>
+              <!-- Button trigger modal -->
+              <a
+                class="ms-2"
+                id="btnLogin"
+                type="button"
+                class="text-center"
+                data-bs-toggle="modal"
+                data-bs-target="#modal"
+              >
+                <i class="fas fa-user-circle"></i>
+              </a>
             </div>
           </div>
         </nav>
       </div>
     </header>
     <main class="d-flex flex-column align-items-center">
+      <!-- Modal del buscador -->
+      <div
+        class="modal fade search-modal"
+        id="searchModal"
+        tabindex="-1"
+        aria-labelledby="searchModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="searchModalLabel">Buscar</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body list-modal">
+              <input
+                type="text"
+                id="searchInput"
+                class="form-control"
+                placeholder="Pelicula o Categoria"
+              />
+              <ul id="searchResults" class="list-group mt-3"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="imagenFondo" class="portada">
         <div
           class="h-100 d-flex flex-column align-items-start justify-content-center mt-5 pt-5 logoPelicula"
@@ -120,7 +151,10 @@
       <div class="container">
         <div>
           <div>
-            <p>Acerca de <span id="titulo">Guerra Mundial Z</span><span class="hd"> HD</span></p>
+            <p>
+              Acerca de <span id="titulo">Guerra Mundial Z</span
+              ><span class="hd"> HD</span>
+            </p>
           </div>
           <div class="container mt-3">
             <p>
@@ -148,7 +182,6 @@
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
       ></iframe>
-      
     </main>
     <footer class="footer mt-4 py-4 text-white">
       <div class="container">
