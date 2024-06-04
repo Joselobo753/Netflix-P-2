@@ -23,7 +23,7 @@ const crearCarrusel = (titulo) => {
     const $card = document.createElement("div");
     $card.classList.add("pelicula");
     const $linkPelicula = document.createElement("a");
-    $linkPelicula.href = `${pelicula.trailer}`;
+    $linkPelicula.href = `./pages/ver.html?codigo=${pelicula.codigo}`;
     const $portadaPelicula = document.createElement("img");
     $portadaPelicula.src = `${pelicula.caratula}`;
     $portadaPelicula.alt = `${pelicula.descripcion}`;
