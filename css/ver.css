@@ -34,3 +34,10 @@
 .apartado {
   color: rgb(141, 141, 141);
 }
+#titulog{
+
+    font-weight: 600;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+
+}
