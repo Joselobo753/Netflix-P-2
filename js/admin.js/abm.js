@@ -8,16 +8,17 @@ import { agregarPeliculaALS, cargarCategorias, cargarTablaPeliculas, cargartabla
 export const agregarPelicula = (
   titulo,
   tipo,
+  categoria,
   caratula,
   trailer,
   descripcion
 ) => {
-  const peliculas = new pelicula (titulo, tipo, caratula, trailer, descripcion);
+  const peliculas = new pelicula (titulo, tipo, categoria, caratula, trailer, descripcion) ;
  
   agregarPeliculaALS(peliculas);
 };
 
-export const editarPelicula = (titulo, tipo, caratula, trailer, descripcion) => {
+export const editarPelicula = (titulo, tipo, categoria, caratula, trailer, descripcion)  => {
   const peliculas = obtenerPeliculasDeLS();
   const codigoPelicula = sessionStorage.getItem("codigoPelicula");
   const posicionPelicula = peliculas.findIndex((pelicula) => {
@@ -31,6 +32,7 @@ export const editarPelicula = (titulo, tipo, caratula, trailer, descripcion) => 
   const nuevaPelicula = new pelicula(
     titulo,
     tipo,
+    categoria,
     caratula,
     trailer,
     descripcion

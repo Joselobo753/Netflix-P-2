@@ -40,7 +40,10 @@ const cargarFilaTabla = (pelicula, indice) => {
   $tdTipo.textContent = pelicula.tipo;
   $tr.appendChild($tdTipo);
 
-  
+  const $tdCategoria = document.createElement("td");
+  $tdCategoria.textContent = pelicula.categoria;
+  $tr.appendChild($tdCategoria);
+ 
   const $tdTrailer = document.createElement("td");
   const $aTrailer = document.createElement("a");
   $aTrailer.href = `${pelicula.trailer}`;
@@ -71,7 +74,9 @@ const cargarFilaTabla = (pelicula, indice) => {
   $btnEliminar.onclick = () => {
     eliminarPelicula(pelicula.codigo, pelicula.nombre);
   };
- 
+  $destacada.onclick = () => {
+      destacar(pelicula.codigo)
+  }
   $tdAcciones.appendChild($btnEditar);
   $tdAcciones.appendChild($btnEliminar);
   $tdAcciones.appendChild($destacada)
@@ -174,4 +179,18 @@ export function cargarCategorias() {
 
  export function guardarCategorias(categorias) {
   localStorage.setItem('categorias', JSON.stringify(categorias));
+}
+function destacar(codigo) {
+  
+  let peliculas = JSON.parse(localStorage.getItem('pelicula'));
+
+  peliculas.forEach(pelicula => {
+      if (pelicula.codigo !== codigo) {
+          pelicula.destacada = false;
+      } else {
+          pelicula.destacada = true;
+      }
+  });
+
+  localStorage.setItem('pelicula', JSON.stringify(peliculas));
 }

@@ -11,6 +11,7 @@ cargarTablaPeliculas();
 const $form = document.getElementById("formulario")
 const $inputNombre = document.getElementById("nombre")
 const $inputTipo = document.getElementById("tipo")
+const $inputCategoria = document.getElementById("categoria")
 const $inputCaratula = document.getElementById("caratula")
 const $inputTrailer = document.getElementById("trailer")
 const $inputDescripcion = document.getElementById("descripcion")
@@ -30,7 +31,7 @@ $inputDescripcion.addEventListener("blur",()=>{
 
 $form.addEventListener("click",(e)=>{
     e.preventDefault();
-    /* if (
+     /*if (
         !validateTexto($inputNombre)||
         !validateImg($inputCaratula)||
         !validateUrl($inputTrailer)||
@@ -38,17 +39,19 @@ $form.addEventListener("click",(e)=>{
     ) {
         alert("Revisar los campos")
         return;
-    }
-*/    const titulo = $inputNombre.value
+    } */
+   const titulo = $inputNombre.value
     const tipo = $inputTipo.value
+    const categoria = $inputCategoria.value
     const caratula = $inputCaratula.value
-    const trailer = $inputCaratula.value
+    const trailer = $inputTrailer.value
     const descripcion = $inputDescripcion.value
  if (estaEditando()) {
-    agregarPelicula(titulo,tipo,caratula,trailer,descripcion)
+    console.log(descripcion)
+    agregarPelicula(titulo, tipo, categoria, caratula, trailer, descripcion) 
     
  }else{
-    editarPelicula(titulo,tipo,caratula,trailer,descripcion)
+    editarPelicula(titulo,tipo,categoria,caratula,trailer,descripcion)
 }
    
 
@@ -94,7 +97,7 @@ export function mostrarCategorias() {
     selectCategoria.innerHTML = '';
     categorias.forEach(categoria => {
         const option = document.createElement('option');
-        option.value = categoria.codigo;
+        option.value = categoria.nombre;
         option.textContent = categoria.nombre;
         selectCategoria.appendChild(option);
     });
