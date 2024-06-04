@@ -17,6 +17,12 @@
   border-radius: 10px;
 }
 
+#btnLogin {
+  background-color: transparent;
+  border: none;
+  color: #db0b10;
+}
+
 .invert {
   filter: invert(1);
 }
