@@ -43,10 +43,7 @@
   <body>
     <header>
       <div class="justify-content-between">
-        <nav
-          id="navbar"
-          class="navbar navbar-expand-lg navbar-dark fixed-top px-5"
-        >
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark px-5">
           <a class="navbar-brand" href="../index.html">
             <img
               src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
@@ -66,15 +63,20 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
+            <ul class="navbar-nav me-auto d-flex align-items-center">
               <li class="nav-item">
                 <a class="nav-link active" href="../index.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./error404.html">Series</a>
+                <a class="nav-link" href="./error404.html"></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./error404.html">Películas</a>
+                
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./error404.html">Series</a>
+                
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./error404.html">Novedades populares</a>
@@ -220,12 +222,12 @@
         <h2 class="text-center">Cargar Categorias</h2>
         <div>
           <form
-            id="categoriaForm"
+            id="categoriaForma"
             class="form-inline d-flex justify-content-between align-items-center"
           >
             <label for="categoria">Categoría</label
             ><input type="text" id="nombreCat" name="nombre" />
-          </form>
+          
         </div>
         <div>
           <div class="mt-4">
@@ -246,6 +248,7 @@
             >
               Crear Categoría
             </button>
+          </form>
           </div>
         </div>
       </div>

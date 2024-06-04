@@ -61,13 +61,15 @@ export const editarPelicula = (
   peliculas.splice(posicionPelicula, 1, nuevaPelicula);
 
   localStorage.setItem("peliculas", JSON.stringify(peliculas));
+
 };
 
-export const eliminarPelicula = (idPelicula, nombrePelicula) => {
+export const eliminarPelicula = (idPelicula) => {
+  
   swal
     .fire({
       title: "Atención",
-      text: `¿Estás seguro que deseas eliminar la pelicula de ${nombrePelicula}? Esta acción es irreversible.`,
+      text: `¿Estás seguro que deseas eliminar la pelicula? Esta acción es irreversible.`,
       icon: "warning",
       showConfirmButton: true,
       showCancelButton: true,
@@ -87,7 +89,7 @@ export const eliminarPelicula = (idPelicula, nombrePelicula) => {
         cargarTablaPeliculas();
         swal.fire({
           title: "Exito",
-          text: `Contacto ${nombrePelicula} eliminado correctamente`,
+          text: `Pelicula eliminada correctamente`,
           icon: "success",
           showConfirmButton: true,
           showCancelButton: false,
@@ -105,44 +107,41 @@ export function crearCategoria(nombre, calificacion) {
 }
 
 export function editarCategoria(codigo) {
-  const categoria = leerCategorias().find((cat) => cat.codigo === codigo);
+  const categoria = leerCategorias().find(cat => cat.codigo === codigo);
   if (categoria) {
-    document.getElementById("nombreCat").value = categoria.nombre;
-    document.getElementById("calificacion").value = categoria.calificacion;
+      document.getElementById('nombreCat').value = categoria.nombre;
+      document.getElementById('calificacion').value = categoria.calificacion;
 
-    document.getElementById("categoriaForm").onsubmit = function (event) {
-      event.preventDefault();
-      actualizarCategoria(
-        codigo,
-        document.getElementById("nombreCat").value,
-        document.getElementById("calificacion").value
-      );
-      mostrarCategorias();
-    };
+      document.getElementById('categoriaForm').onsubmit = function(event) {
+          event.preventDefault();
+          actualizarCategoria(codigo, document.getElementById('nombreCat').value, document.getElementById('calificacion').value);
+          mostrarCategorias();
+          
+      };
   }
 }
 function actualizarCategoria(codigo, nombre, calificacion) {
   const categorias = cargarCategorias();
-  const categoria = categorias.find((cat) => cat.codigo === codigo);
+  const categoria = categorias.find(cat => cat.codigo === codigo);
   if (categoria) {
-    categoria.nombre = nombre;
-    categoria.calificacion = calificacion;
-    guardarCategorias(categorias);
-    eliminarCategoria(codigo, nombre, true);
-    return categoria;
+      categoria.nombre = nombre;
+      categoria.calificacion = calificacion;
+      guardarCategorias(categorias);
+      eliminarCategoria(codigo,nombre,true)
+      return categoria;
   } else {
-    console.log("Categoría no encontrada");
-    return null;
+      console.log('Categoría no encontrada');
+      return null;
   }
 }
-export function eliminarCategoria(codigo, nombre, editar) {
-  if (editar === true) {
+export function eliminarCategoria(codigo,nombre,editar) {
+  if(editar === true){
     let categorias = cargarCategorias();
-    categorias = categorias.filter((cat) => cat.codigo !== codigo);
-    guardarCategorias(categorias);
-    mostrarCategorias();
-    cargartabla();
-    return;
+  categorias = categorias.filter(cat => cat.codigo !== codigo);
+  guardarCategorias(categorias);
+  mostrarCategorias()
+  cargartabla()
+  return
   }
 
   swal
@@ -157,19 +156,19 @@ export function eliminarCategoria(codigo, nombre, editar) {
     })
     .then((result) => {
       if (result.isConfirmed) {
-        let categorias = cargarCategorias();
-        categorias = categorias.filter((cat) => cat.codigo !== codigo);
-        guardarCategorias(categorias);
-        mostrarCategorias();
-        cargartabla();
-        swal.fire({
-          title: "Exito",
-          text: `Categoria ${nombre} eliminado correctamente`,
-          icon: "success",
-          showConfirmButton: true,
-          showCancelButton: false,
-          confirmButtonText: "Que pena",
-        });
-      }
-    });
+      let categorias = cargarCategorias();
+  categorias = categorias.filter(cat => cat.codigo !== codigo);
+  guardarCategorias(categorias);
+  mostrarCategorias()
+  cargartabla()
+  swal.fire({
+      title: "Exito",
+      text: `Categoria ${nombre} eliminado correctamente`,
+      icon: "success",
+      showConfirmButton: true,
+      showCancelButton: false,
+      confirmButtonText: "Que pena",
+  });
+}
+});
 }
