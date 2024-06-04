@@ -1,13 +1,7 @@
 export const trimInterno = (texto) => {
   return texto.replace(/\s+/g, " ");
 
-  /*
-  Busca cualquier ocurrencia de \s que es un espacio y en cualquier cantidad, y reemplaza esa cantidad x por un solo espacio
-  \s es el espacio
-  + indica mas de una ocurrencia del espacio por lo que busca conjunto de espacios
-  / indica el fin de la expresion
-  g es global, es decir que busca en toda la cadena conjunto de espacio y no se queda en la primera coincidencia
-  */
+  
 };
 export const validInput = ($input) => {
   $input.classList.remove("is-invalid");

@@ -51,7 +51,7 @@ body {
   color: #ffffff;
   margin-left: 10px;
 }
-/* ---- ----- ----- Main ----- ----- ----- */
+
 main {
   & div {
     & img {
@@ -80,7 +80,7 @@ main {
     }
   }
 }
-/* ---- ----- ----- Footer ----- ----- ----- */
+
 .footer {
   border-top: 1px solid var(--background);
 }
@@ -133,7 +133,7 @@ main {
   border-color: #ffffff;
 }
 
-/* ---- ----- ----- Media Queries ----- ----- ----- */
+
 @media screen and (max-width: 800px) {
   header .logotipo {
     margin-bottom: 10px;
