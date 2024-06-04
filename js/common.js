@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
       pelicula.titulo.toLowerCase().includes(term) || 
       pelicula.categoria.toLowerCase().includes(term)
     );
-    console.log(peliculas);
 
     // Limpiar los resultados anteriores
     searchResults.innerHTML = '';
