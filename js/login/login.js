@@ -14,7 +14,7 @@ const $logssemail = document.querySelector("#logssemail");
 const $logsspass = document.querySelector("#logsspass");
 
 //Usuario del administrador
-const usuarioAdmin = new Usuario("admin", "admin12345");
+const usuarioAdmin = new Usuario("eze@admin.com", "noseusavar");
 
 //Boton que redirije a admin si esta logueado
 $btnLogin.addEventListener("click", () => {

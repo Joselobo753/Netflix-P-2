@@ -6,12 +6,12 @@ export const validateTexto = ($field) => {
     return false;
   }
 
-  if ($field.value.trim().length < 3 || $field.value.trim().length > 50) {
+  if ($field.value.trim().length < 3 || $field.value.trim().length > 400) {
     invalidInput($field);
     return false;
   }
 
-  const regex = /^[a-zA-ZÁÉÍÓÚáéíóúÜüÑñ\s]+$/;
+  const regex = /^[a-zA-ZÁÉÍÓÚáéíóúÜüÑñ0-9.,@():'"-\s]+$/;
   if (!regex.test($field.value)) {
     invalidInput($field);
     return false;
@@ -75,7 +75,8 @@ export const validateNombre = ($input) => {
     return false;
   }
 
-  const regex = /^[a-zA-ZÁÉÍÓÚáéíóúÜüÑñ\s]+$/;
+  const regex = /^[a-zA-ZÁÉÍÓÚáéíóúÜüÑñ0-9.,@():'"-\s]+$/;
+
   if (!regex.test($input.value)) {
     invalidInput($input);
     return false;
