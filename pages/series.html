@@ -30,9 +30,9 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/common.css" />
-    <title>Netflix</title>
+    <link rel="stylesheet" href="../css/series.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <title>Series</title>
   </head>
   <body>
     <header>
@@ -41,7 +41,7 @@
           id="navbar"
           class="navbar navbar-expand-lg navbar-dark fixed-top px-5"
         >
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="../index.html">
             <img
               src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
               width="100"
@@ -62,26 +62,24 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto d-flex align-items-center">
               <li class="nav-item">
-                <a class="nav-link active" href="#">Inicio</a>
+                <a class="nav-link active" href="../index.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/series.html">Series</a>
+                <a class="nav-link" href="./error404.html">Series</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/error404.html">Películas</a>
+                <a class="nav-link" href="./error404.html">Películas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/error404.html"
+                <a class="nav-link" href="./error404.html"
                   >Novedades populares</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/contactanos.html"
-                  >Contactanos</a
-                >
+                <a class="nav-link" href="./contactanos.html">Contactanos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/nuestroEquipo.html"
+                <a class="nav-link" href="./nuestroEquipo.html"
                   >Nuestro equipo</a
                 >
               </li>
@@ -96,7 +94,7 @@
               >
                 <i class="fas fa-search"></i>
               </button>
-              <a class="nav-link invert" href="./pages/error404.html"
+              <a class="nav-link invert" href="./error404.html"
                 ><i class="fas fa-bell"></i
               ></a>
               <!-- Button trigger modal -->
@@ -115,7 +113,7 @@
         </nav>
       </div>
     </header>
-    <main>
+    <main class="d-flex justify-content-center">
       <!-- Modal del buscador -->
       <div
         class="modal fade search-modal"
@@ -204,7 +202,7 @@
                                   Iniciar sesión
                                 </a>
                                 <p class="mb-0 mt-4 text-center">
-                                  <a href="./pages/error404.html" class="link"
+                                  <a href="./error404.html" class="link"
                                     >Olvidaste tu contraseña?</a
                                   >
                                 </p>
@@ -266,25 +264,52 @@
           </div>
         </div>
       </div>
-      <!-- Index -->
-      <div id="fondoPrincipal" class="pelicula-principal">
-        <div class="container">
-          <h5 id="tituloPrincipal" class="titulo">Interestellar</h5>
-          <p id="descripcionPrincipal" class="descripcion">
-            Narra las aventuras de un grupo de exploradores que hacen uso de un
-            agujero de gusano recientemente descubierto para superar las
-            limitaciones de los viajes espaciales tripulados y vencer las
-            inmensas distancias que tiene un viaje interestelar.
-          </p>
-          <button role="button" class="boton boton-play fw-bold my-2">
-            <i class="fas fa-play"></i>Reproducir
-          </button>
-          <button role="button" class="boton boton-info my-2">
-            <i class="fas fa-info-circle"></i>Más información
-          </button>
+      <!-- Series o peliculas-->
+      <div class="container-fluid row m-5 pt-4">
+        <div class="col-12 d-flex justify-content-center">
+          <h1>Series</h1>
+        </div>
+        <div
+          id="contenedorSeries"
+          class="container d-flex flex-wrap w-100 mt-2"
+        >
+          <article class="cardPelicula col-lg-3 col-md-6 col-12 mb-3">
+            <img
+              class="imgPelicula"
+              src="../resources/p404/AR-es-20240527-popsignuptwoweeks-perspective_alpha_website_small.jpg"
+              alt=""
+            />
+          </article>
+          <article class="cardPelicula col-lg-3 col-md-6 col-12 mb-3">
+            <img
+              class="imgPelicula"
+              src="../resources/p404/AR-es-20240527-popsignuptwoweeks-perspective_alpha_website_small.jpg"
+              alt=""
+            />
+          </article>
+          <article class="cardPelicula col-lg-3 col-md-6 col-12 mb-3">
+            <img
+              class="imgPelicula"
+              src="../resources/p404/AR-es-20240527-popsignuptwoweeks-perspective_alpha_website_small.jpg"
+              alt=""
+            />
+          </article>
+          <article class="cardPelicula col-lg-3 col-md-6 col-12 mb-3">
+            <img
+              class="imgPelicula"
+              src="../resources/p404/AR-es-20240527-popsignuptwoweeks-perspective_alpha_website_small.jpg"
+              alt=""
+            />
+          </article>
+          <article class="cardPelicula col-lg-3 col-md-6 col-12 mb-3">
+            <img
+              class="imgPelicula"
+              src="../resources/p404/AR-es-20240527-popsignuptwoweeks-perspective_alpha_website_small.jpg"
+              alt=""
+            />
+          </article>
         </div>
       </div>
-      <section id="galeria"></section>
     </main>
     <footer class="footer mt-4 py-4 text-white">
       <div class="container">
@@ -309,38 +334,36 @@
         <div class="row">
           <div class="col-sm-6 col-md-3">
             <ul class="text-start">
-              <li><a href="./pages/error404.html">Audio descriptivo</a></li>
+              <li><a href="./error404.html">Audio descriptivo</a></li>
               <li>
-                <a href="./pages/error404.html"
-                  >Relaciones con inversionistas</a
-                >
+                <a href="./error404.html">Relaciones con inversionistas</a>
               </li>
-              <li><a href="./pages/error404.html">Avisos legales</a></li>
+              <li><a href="./error404.html">Avisos legales</a></li>
             </ul>
           </div>
           <div class="col-sm-6 col-md-3">
             <ul class="text-start">
-              <li><a href="./pages/error404.html">Centro de ayuda</a></li>
-              <li><a href="./pages/error404.html">Empleo</a></li>
+              <li><a href="./error404.html">Centro de ayuda</a></li>
+              <li><a href="./error404.html">Empleo</a></li>
               <li>
-                <a href="./pages/error404.html">Preferencias de cookies</a>
+                <a href="./error404.html">Preferencias de cookies</a>
               </li>
             </ul>
           </div>
           <div class="col-sm-6 col-md-3">
             <ul class="text-start">
-              <li><a href="./pages/error404.html">Tarjetas de regalo</a></li>
-              <li><a href="./pages/error404.html">Términos de uso</a></li>
+              <li><a href="./error404.html">Tarjetas de regalo</a></li>
+              <li><a href="./error404.html">Términos de uso</a></li>
               <li>
-                <a href="./pages/error404.html">Información corporativa</a>
+                <a href="./error404.html">Información corporativa</a>
               </li>
             </ul>
           </div>
           <div class="col-sm-6 col-md-3">
             <ul class="text-start">
-              <li><a href="./pages/error404.html">Prensa</a></li>
-              <li><a href="./pages/error404.html">Privacidad</a></li>
-              <li><a href="./pages/error404.html">Contáctanos</a></li>
+              <li><a href="./error404.html">Prensa</a></li>
+              <li><a href="./error404.html">Privacidad</a></li>
+              <li><a href="./error404.html">Contáctanos</a></li>
             </ul>
           </div>
         </div>
@@ -362,8 +385,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="./js/login/login.js"></script>
-    <script type="module" src="./js/common.js"></script>
-    <script type="module" src="./js/index/app.js"></script>
+    <script type="module" src="../js/login/login.js"></script>
+    <script type="module" src="../js/common.js"></script>
+    <script type="module" src="../js/series/app.js"></script>
   </body>
 </html>

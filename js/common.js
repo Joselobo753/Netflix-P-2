@@ -1,20 +1,19 @@
 import { obtenerPeliculasDeLS } from "./utils.js";
 
 const $header = document.querySelector("header");
-const $btnCerrar = document.querySelector("#btnCerrar");
-const $btnLogin = document.querySelector("#btnLogin");
 const pageTitle = document.title;
 
 if (pageTitle === "Administrador") {
+  const $btnLogin = document.querySelector("#btnLogin");
+  const $btnCerrar = document.querySelector("#btnCerrar");
   $btnCerrar.classList.remove("d-none");
   $btnLogin.classList.add("d-none");
+  $btnCerrar.addEventListener("click", (event) => {
+    event.preventDefault();
+    sessionStorage.removeItem("estaLogueado");
+    window.location.replace("../index.html");
+  });
 }
-
-$btnCerrar.addEventListener("click", (event) => {
-  event.preventDefault();
-  sessionStorage.removeItem("estaLogueado");
-  window.location.replace("../index.html");
-});
 
 window.addEventListener("scroll", () => {
   let scroll = window.scrollY;
