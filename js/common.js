@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
         pelicula.categoria.toLowerCase().includes(term)
     );
 
-    // Limpiar los resultados anteriores
+    
     searchResults.innerHTML = "";
 
-    // Mostrar los resultados filtrados
+   
     filteredPeliculas.forEach((pelicula) => {
       const listItem = document.createElement("li");
       listItem.classList.add("list-group-item");

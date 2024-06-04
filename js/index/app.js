@@ -4,7 +4,7 @@ import { obtenerPeliculasDeLS } from "../utils.js";
 
 
 
-// ----- ----- Event Listener para scroll. ----- -----
+
 window.addEventListener("scroll", function () {
   const navbar = document.getElementById("navbar");
   if (window.scrollY > 100) {
@@ -75,27 +75,27 @@ const crearCarrusel = (titulo, peliculas) => {
   $main.appendChild($carousel);
 };
 
-// Main function to create all carousels
+
 const crearTodosLosCaruseles = () => {
   const peliculas = obtenerPeliculasDeLS();
   const categorias = JSON.parse(localStorage.getItem("categorias"));
 
-  // Predefined categories
+ 
   const predefinedCategories = [ "Recomendación de Eze"];
   predefinedCategories.forEach(categoria => {
     crearCarrusel(categoria, peliculas);
   });
 
-  // Additional categories from local storage
+
   categorias.forEach(categoria => {
     const peliculasFiltradas = peliculas.filter(pelicula => pelicula.categoria === categoria.nombre);
     crearCarrusel(categoria.nombre, peliculasFiltradas);
   });
 };
 
-// Call the main function to create all carousels
+
 crearTodosLosCaruseles();
-// ----- ----- Carrusel. ----- -----
+
 document.querySelectorAll(".peliculas-carousel").forEach((carousel) => {
   const fila = carousel.querySelector(".contenedor-carousel");
   const peliculas = carousel.querySelectorAll(".pelicula");
@@ -103,7 +103,7 @@ document.querySelectorAll(".peliculas-carousel").forEach((carousel) => {
   const flechaDerecha = carousel.querySelector(".flecha-derecha");
   const indicadoresContainer = carousel.querySelector(".indicadores");
 
-  // Paginación
+  
   const numeroPaginas = Math.ceil(peliculas.length / 5);
   for (let i = 0; i < numeroPaginas; i++) {
     const indicador = document.createElement("button");
@@ -117,7 +117,7 @@ document.querySelectorAll(".peliculas-carousel").forEach((carousel) => {
     });
   }
 
-  // Flechas de navegación
+
   flechaIzquierda.addEventListener("click", () => {
     const activeIndex = Array.from(indicadoresContainer.children).indexOf(
       carousel.querySelector(".indicadores .activo")
@@ -136,7 +136,7 @@ document.querySelectorAll(".peliculas-carousel").forEach((carousel) => {
     actualizarIndicadores(newIndex);
   });
 
-  // Hover
+
   peliculas.forEach((pelicula) => {
     pelicula.addEventListener("mouseenter", (e) => {
       const elemento = e.currentTarget;

@@ -95,23 +95,23 @@ export const prepararEdicionPelicula = (pelicula) => {
   const $inputTrailer = document.getElementById("trailer");
   const $inputDescripcion = document.getElementById("descripcion");
 
-  // 2. Cargar la info
+
   $inputNombre.value = pelicula.titulo;
   $inputTipo.value = pelicula.tipo;
   $inputCaratula.value = pelicula.caratula;
   $inputTrailer.value = pelicula.trailer;
   $inputDescripcion.value = pelicula.descripcion;
 
-  // 3. Guardar código
+ 
   sessionStorage.setItem("codigoPelicula", pelicula.codigo);
 
-  // 4. Mostrar alert
+  
   const $alert = document.getElementById("alert-edicion-peli");
   const $spanPelicula = document.getElementById("peli-edicion");
   $alert.classList.remove("d-none");
   $spanPelicula.textContent = pelicula.titulo;
 
-  // 5. Mostrar boton
+
   const $button = document.getElementById("button-cancelar");
   $button.classList.remove("d-none");
 };
