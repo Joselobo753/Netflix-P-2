@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -15,14 +15,22 @@
       name="author"
       content="Grupo 2: Jose Lobo, Santiago Puertas, Leandro Vinticol"
     />
-    <link rel="shortcut icon" href="https://seeklogo.com/images/N/netflix-n-logo-0F1ED3EBEB-seeklogo.com.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="https://seeklogo.com/images/N/netflix-n-logo-0F1ED3EBEB-seeklogo.com.png"
+      type="image/x-icon"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -33,270 +41,337 @@
       src="https://kit.fontawesome.com/3926a4efb9.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <title>Administrador</title>
-</head>
-<body>
+  </head>
+  <body class="p-0">
     <header>
-        <div class="justify-content-between">
-          <nav
-            id="navbar"
-            class="navbar navbar-expand-lg navbar-dark fixed-top px-5"
+      <div class="justify-content-between">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark px-5">
+          <a class="navbar-brand" href="../index.html">
+            <img
+              src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
+              width="100"
+              alt="Netflix Logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <a class="navbar-brand" href="../index.html">
-              <img
-                src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
-                width="100"
-                alt="Netflix Logo"
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto d-flex align-items-center">
+              <li class="nav-item">
+                <a class="nav-link active" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./error404.html">Series</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./error404.html">Películas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./error404.html"
+                  >Novedades populares</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contactanos.html">Contactanos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./nuestroEquipo.html"
+                  >Nuestro equipo</a
+                >
+              </li>
+            </ul>
+            <div class="d-flex align-items-center ms-auto">
+              <input
+                class="form-control me-2 custom-input"
+                type="search"
+                aria-label="Search"
               />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                  <a class="nav-link active" href="../index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Series</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Películas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Novedades populares</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Mi lista</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Explora por idiomas</a>
-                </li>
-              </ul>
-              <div class="d-flex align-items-center ms-auto">
-                <input
-                  class="form-control me-2 custom-input"
-                  type="search"
-                  aria-label="Search"
-                />
-                <a class="nav-link search-icon" href="#"
-                  ><i class="fas fa-search"></i
-                ></a>
-                <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
-                <a
-                class="ms-2"
-                id="btnLogin"
-                type="button"
-                class="text-center"
-                data-bs-toggle="modal"
-                data-bs-target="#modal"
-              >
-                <i class="fas fa-user-circle"></i>
-              </a>
+              <a class="nav-link search-icon invert" href="./error404.html"
+                ><i class="fas fa-search"></i
+              ></a>
+              <a class="nav-link invert" href="./error404.html"
+                ><i class="fas fa-bell"></i
+              ></a>
+              <div>
+                <!-- Button trigger modal -->
+                <button
+                  class="ms-2"
+                  id="btnLogin"
+                  type="button"
+                  class="text-center"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal"
+                >
+                  <i class="fas fa-user-circle"></i>
+                </button>
               </div>
             </div>
-          </nav>
-        </div>
-      </header>
-      <main>
-        <div class="container mt-5 text-white">
-            <h2 class="text-center">Cargar Película o Serie</h2>
-            <article id="alert-edicion-peli" class="alert alert-warning d-none">
-              Atencion: estás editando la pelicula
-              <span id="peli-edicion"></span>
-            </article>
-            <form id="formularioPeliculas">
-                <div class="form-group my-1">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre de la película o serie">
-                </div>
-                <div class="form-group my-1">
-                    <label for="tipo">Tipo</label>
-                    <select class="form-control" id="tipo">
-                        <option value="pelicula">Película</option>
-                        <option value="serie">Serie</option>
-                    </select>
-                </div>
-                <div class="form-group my-1">
-                    <label for="caratula">Carátula (URL)</label>
-                    <input type="text" class="form-control" id="caratula" placeholder="URL de la imagen de la carátula">
-                </div>
-                <div class="form-group my-1">
-                    <label for="trailer">Trailer (URL)</label>
-                    <input type="text" class="form-control" id="trailer" placeholder="URL del trailer">
-                </div>
-                <div class="form-group my-1">
-                    <label for="categoria">Categoría</label>
-                    <select class="form-control" id="categoria">
-                        <option value="accion">Acción</option>
-                        <option value="comedia">Comedia</option>
-                        <option value="drama">Drama</option>
-                        <option value="fantasia">Fantasía</option>
-                        <option value="terror">Terror</option>
-                        <option value="documental">Documental</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="descripcion">Descripción</label>
-                    <textarea class="form-control" id="descripcion" rows="3" placeholder="Descripción de la película o serie"></textarea>
-                </div>
-                <button type="submit" class="btn bred btn-block mt-2" id="formulario">Cargar</button>
-                <button
-              id="button-cancelar"
-              type="button"
-              class="d-none btn btn-secondary"
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container mt-5 text-white">
+        <h2 class="text-center">Cargar Película o Serie</h2>
+        <article id="alert-edicion-peli" class="alert alert-warning d-none">
+          Atencion: estás editando la pelicula
+          <span id="peli-edicion"></span>
+        </article>
+        <form id="formularioPeliculas">
+          <div class="form-group my-1">
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              placeholder="Nombre de la película o serie"
+            />
+          </div>
+          <div class="form-group my-1">
+            <label for="tipo">Tipo</label>
+            <select class="form-control" id="tipo">
+              <option value="pelicula">Película</option>
+              <option value="serie">Serie</option>
+            </select>
+          </div>
+          <div class="form-group my-1">
+            <label for="caratula">Carátula (URL)</label>
+            <input
+              type="text"
+              class="form-control"
+              id="caratula"
+              placeholder="URL de la imagen de la carátula"
+            />
+          </div>
+          <div class="form-group my-1">
+            <label for="trailer">Trailer (URL)</label>
+            <input
+              type="text"
+              class="form-control"
+              id="trailer"
+              placeholder="URL del trailer"
+            />
+          </div>
+          <div class="form-group my-1">
+            <label for="categoria">Categoría</label>
+            <select class="form-control" id="categoria">
+              <option value="accion">Acción</option>
+              <option value="comedia">Comedia</option>
+              <option value="drama">Drama</option>
+              <option value="fantasia">Fantasía</option>
+              <option value="terror">Terror</option>
+              <option value="documental">Documental</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <textarea
+              class="form-control"
+              id="descripcion"
+              rows="3"
+              placeholder="Descripción de la película o serie"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn bred btn-block mt-2" id="formulario">
+            Cargar
+          </button>
+          <button
+            id="button-cancelar"
+            type="button"
+            class="d-none btn btn-secondary"
+          >
+            Cancelar edicion
+          </button>
+        </form>
+      </div>
+      <form>
+        <div class="text-white container my-3">
+          <h2 class="text-center">Cargar Categorias</h2>
+          <div>
+            <form
+              id="categoriaForm"
+              class="form-inline d-flex justify-content-between align-items-center"
             >
-              Cancelar edicion
+              <label for="categoria">Categoría</label>
+              <input type="text" id="nombreCat" name="nombre" />
+            </form>
+          </div>
+          <div>
+            <label for="calificacion">Calificación:</label>
+            <select class="form-control" id="calificacion">
+              <option value="G">G – General Audiences</option>
+              <option value="PG">PG – Parental Guidance Suggested</option>
+              <option value="PG-13">PG-13 – Parents Strongly Cautioned</option>
+              <option value="R">R – Restricted</option>
+              <option value="NC-17">NC-17 – Adults Only</option>
+            </select>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="btn bred btn-block mt-2"
+              id="categoriaForm"
+            >
+              Crear Categoría
             </button>
-              </form>
-        </div>
-      </main>
-    </form>
-    <div class="text-white container my-3">
-      <h2 class="text-center">Cargar Categorias</h2>
-      <div>
-        <form id="categoriaForm" class="form-inline d-flex justify-content-between align-items-center">
-      <label for="categoria">Categoría</label><input type="text" id="nombreCat" name="nombre" >
-      </div>
-    
-   <div>  <label for="calificacion">Calificación:</label>
-      
-                    <select class="form-control" id="calificacion">
-                        <option value="G">	
-                          G – General Audiences</option>
-                        <option value="PG">PG – Parental Guidance Suggested</option>
-                        <option value="PG-13">PG-13 – Parents Strongly Cautioned</option>
-                        <option value="R">R – Restricted</option>
-                        <option value="NC-17">NC-17 – Adults Only</option>
-                      
-                    </select> </div>
-     
-      <div>
-      <button type="submit" class="btn bred btn-block mt-2" id="categoriaForm" >Crear Categoría</button>
-    </div>
-    </form>
-  </div >
-  <div class="accordion container" id="accordion">
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Peliculas existentes
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordion">
-        <div class="accordion-body">
-          <div class=" container">
-            <Table>
-              <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Caratula</th>
-                    <th>Titulo</th>
-                    <th>Tipo</th>
-                    <th>Categoria</th>
-                    <th>Trailer</th>
-                    <th>Descripción</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="tbody-peliculas"></tbody></Table>
-            </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Categorías Existentes
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordion">
-        <div class="accordion-body"><div class="container">
-  <h4>Categorías Existentes</h4>
-  <table id="tablaCategorias">
-      <thead>
-          <tr>
-              <th>Nombre</th>
-              <th>Calificación</th>
-              <th>Acciones</th>
-          </tr>
-      </thead>
-      <tbody>
-          
-      </tbody>
-  </table>
-</div>
-        </div>
-      </div>
-    </div>
-  
-
-
-    
-    <footer class="mt-4 py-4 text-white">
-        <div class="container">
-          <div class="row">
-              <div class="col-md-12 mb-3">
-                  <a href="https://www.facebook.com/Netflixmx" class="social-icon"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a href="https://www.instagram.com/NetflixLAT/" class="social-icon"><i class="fab fa-instagram"></i></a>
-                  <a href="https://x.com/netflixLAT" class="social-icon"><i class="fab fa-twitter"></i></a>
-                  <a href="https://www.youtube.com/channel/UC5ZiUaIJ2b5dYBYGf5iEUrA" class="social-icon"><i class="fab fa-youtube"></i></a>
-                </div>
-          <div class="row">
-            <div class="col-sm-6 col-md-3">
-              <ul class="text-start">
-                <li><a href="#">Audio descriptivo</a></li>
-                <li><a href="#">Relaciones con inversionistas</a></li>
-                <li><a href="#">Avisos legales</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <ul class="text-start">
-                <li><a href="#">Centro de ayuda</a></li>
-                <li><a href="#">Empleo</a></li>
-                <li><a href="#">Preferencias de cookies</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <ul class="text-start">
-                <li><a href="#">Tarjetas de regalo</a></li>
-                <li><a href="#">Términos de uso</a></li>
-                <li><a href="#">Información corporativa</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <ul class="text-start">
-                <li><a href="#">Prensa</a></li>
-                <li><a href="#">Privacidad</a></li>
-                <li><a href="#">Contáctanos</a></li>
-              </ul>
-            </div>
           </div>
-          <div class="row mt-3">
-            <div class="col-md-12">
-              <button class="btn btn-sm">Código de servicio</button>
-              <p class="mt-2">© 1997-2024 Netflix, Inc.</p>
+        </div>
+      </form>
+      <div class="accordion container" id="accordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              Peliculas existentes
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#accordion"
+          >
+            <div class="accordion-body">
+              <div class="container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Caratula</th>
+                      <th>Titulo</th>
+                      <th>Tipo</th>
+                      <th>Categoria</th>
+                      <th>Trailer</th>
+                      <th>Descripción</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbody-peliculas"></tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
-        <section>
-         
-        </section>
-      </footer>
-</body>
-<script type="module" src="/js/admin/app.js"></script>
-<script type="module" src="/js/admin/objs/Categoria.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              Categorías Existentes
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordion"
+          >
+            <div class="accordion-body">
+              <div class="container">
+                <h4>Categorías Existentes</h4>
+                <table id="tablaCategorias">
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Calificación</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer mt-4 py-4 text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <a href="https://www.facebook.com/Netflixmx" class="social-icon"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.instagram.com/NetflixLAT/" class="social-icon"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://x.com/netflixLAT" class="social-icon"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/channel/UC5ZiUaIJ2b5dYBYGf5iEUrA"
+              class="social-icon"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-3">
+            <ul class="text-start">
+              <li><a href="./error404.html">Audio descriptivo</a></li>
+              <li>
+                <a href="./error404.html">Relaciones con inversionistas</a>
+              </li>
+              <li><a href="./error404.html">Avisos legales</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <ul class="text-start">
+              <li><a href="./error404.html">Centro de ayuda</a></li>
+              <li><a href="./error404.html">Empleo</a></li>
+              <li>
+                <a href="./error404.html">Preferencias de cookies</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <ul class="text-start">
+              <li><a href="./error404.html">Tarjetas de regalo</a></li>
+              <li><a href="./error404.html">Términos de uso</a></li>
+              <li>
+                <a href="./error404.html">Información corporativa</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <ul class="text-start">
+              <li><a href="./error404.html">Prensa</a></li>
+              <li><a href="./error404.html">Privacidad</a></li>
+              <li><a href="./error404.html">Contáctanos</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <button class="btn btn-sm">Código de servicio</button>
+            <p class="mt-2">© 1997-2024 Netflix, Inc.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script type="module" src="/js/admin/app.js"></script>
+  <script type="module" src="/js/admin/objs/Categoria.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </html>
