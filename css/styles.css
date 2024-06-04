@@ -2,6 +2,7 @@
   --red: #db0000;
   --background: #141414;
   --secondary: #808080;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem var(--red);
 }
 
 body {
@@ -58,9 +59,33 @@ main {
       object-fit: cover;
     }
     & .bred {
+      padding: 5px 10px;
+      color: #ffffff;
       background-color: var(--red);
+      font-size: 0.8rem;
       &:hover {
-        background: #db000088;
+        background: #db000093;
+      }
+    }
+  }
+  & .tabla-pelis {
+    background-color: var(--background);
+    & .accordion-button {
+      color: #ffffff;
+      background-color: var(--background);
+    }
+    & .accordion-body {
+      color: #ffffff;
+      background-color: #222222;
+      & tr,
+      th,
+      td {
+        font-size: 1rem;
+        color: #ffffff;
+        background-color: #222222;
+        & a {
+          color: #ffffff;
+        }
       }
     }
   }
