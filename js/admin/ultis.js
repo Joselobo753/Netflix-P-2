@@ -6,7 +6,7 @@ import { pelicula } from "./objs/Pelicula.js";
 export const agregarPeliculaALS = (pelicula) => {
   const peliculas = obtenerPeliculasDeLS();
   peliculas.push(pelicula);
-  localStorage.setItem("pelicula", JSON.stringify(peliculas));
+  localStorage.setItem("peliculas", JSON.stringify(peliculas));
 };
 
 

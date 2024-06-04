@@ -39,7 +39,7 @@ export const editarPelicula = (titulo, tipo, categoria, caratula, trailer, descr
   );
   peliculas.splice(posicionPelicula, 1, nuevaPelicula);
 
-  localStorage.setItem("pelicula", JSON.stringify(pelicula));
+  localStorage.setItem("peliculas", JSON.stringify(peliculas));
 
  
 };
