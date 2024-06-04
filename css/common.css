@@ -106,6 +106,42 @@ label {
   margin-left: 10px;
 }
 
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.search-modal .modal-content {
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  border: none;
+}
+
+.search-modal .form-control {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+.search-modal .form-control::placeholder {
+  color: #ccc;
+}
+
+#searchResults {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#searchResults .list-group-item {
+  cursor: pointer;
+}
+
+#searchResults .list-group-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .footer {
   border-top: 1px solid var(--background);
 }
