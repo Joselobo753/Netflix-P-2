@@ -47,8 +47,6 @@ export const enviarMail = (titulo, msg) => {
     Body: msg,
   });
 };
-<<<<<<< HEAD
-=======
 
 export const obtenerPeliculasDeLS = () => {
   return ordenarLista(JSON.parse(localStorage.getItem("pelicula") || []));
@@ -69,4 +67,3 @@ export const ordenarLista = (lista) => {
     return 0;
   });
 };
->>>>>>> main
