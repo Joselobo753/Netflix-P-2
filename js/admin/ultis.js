@@ -168,7 +168,7 @@ export function guardarCategorias(categorias) {
   localStorage.setItem("categorias", JSON.stringify(categorias));
 }
 function destacar(codigo) {
-  let peliculas = JSON.parse(localStorage.getItem("pelicula"));
+  let peliculas = JSON.parse(localStorage.getItem("peliculas"));
 
   peliculas.forEach((pelicula) => {
     if (pelicula.codigo !== codigo) {
@@ -178,5 +178,5 @@ function destacar(codigo) {
     }
   });
 
-  localStorage.setItem("pelicula", JSON.stringify(peliculas));
+  localStorage.setItem("peliculas", JSON.stringify(peliculas));
 }
