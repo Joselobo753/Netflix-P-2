@@ -21,21 +21,11 @@
       type="image/x-icon"
     />
     <link
-      rel="shortcut icon"
-      href="https://seeklogo.com/images/N/netflix-n-logo-0F1ED3EBEB-seeklogo.com.png"
-      type="image/x-icon"
-    />
-    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -85,7 +75,9 @@
                 <a class="nav-link" href="./error404.html">Películas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./error404.html">Novedades populares</a>
+                <a class="nav-link" href="./error404.html"
+                  >Novedades populares</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./contactanos.html">Contactanos</a>
@@ -104,7 +96,9 @@
               >
                 <i class="fas fa-search"></i>
               </button>
-              <a class="nav-link" href="./error404.html"><i class="fas fa-bell"></i></a>
+              <a class="nav-link" href="./error404.html"
+                ><i class="fas fa-bell"></i
+              ></a>
               <a
                 class="ms-2"
                 id="btnLogin"
@@ -115,7 +109,12 @@
               >
                 <i class="fas fa-user-circle"></i>
               </a>
-              <a id="btnCerrar" class="btn bred btn-block mt-2 d-none ms-2" href="#">Cerrar sesion</a>
+              <a
+                id="btnCerrar"
+                class="btn bred btn-block mt-2 d-none ms-2"
+                href="#"
+                >Cerrar sesion</a
+              >
             </div>
           </div>
         </nav>
@@ -236,7 +235,7 @@
           >
             <label for="categoria">Categoría</label
             ><input type="text" id="nombreCat" name="nombre" />
-          
+          </form>
         </div>
         <div>
           <div class="mt-4">
@@ -257,11 +256,11 @@
             >
               Crear Categoría
             </button>
-          </form>
           </div>
         </div>
-      </form>
-      <div class="accordion container" id="accordion">
+      </div>
+
+      <div class="accordion mt-5 container tabla-pelis" id="accordion">
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button
@@ -281,8 +280,8 @@
             data-bs-parent="#accordion"
           >
             <div class="accordion-body">
-              <div class="container">
-                <table>
+              <div class="container table-responsive">
+                <table class="table">
                   <thead>
                     <tr>
                       <th>ID</th>
@@ -361,7 +360,9 @@
             <div class="col-sm-6 col-md-3">
               <ul class="text-start">
                 <li><a href="./error404.html">Audio descriptivo</a></li>
-                <li><a href="./error404.html">Relaciones con inversionistas</a></li>
+                <li>
+                  <a href="./error404.html">Relaciones con inversionistas</a>
+                </li>
                 <li><a href="./error404.html">Avisos legales</a></li>
               </ul>
             </div>
