@@ -179,3 +179,7 @@
 .pelicula:hover .pelicula-texto{
   opacity: 1;
 }
+.btnTroll {
+  text-decoration: none;
+  color: black;
+}
