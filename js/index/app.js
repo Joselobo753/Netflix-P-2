@@ -11,6 +11,69 @@ window.addEventListener("scroll", function () {
   }
 });
 
+const crearCarrusel = (titulo) => {
+  const $carouselContainer1 = document.createElement("div");
+  $carouselContainer1.classList.add("carousel");
+  const $carouselContainer2 = document.createElement("div");
+  $carouselContainer2.classList.add("contenedor-carousel");
+
+  const arregloPelicula = obtenerPeliculasDeLS();
+
+  arregloPelicula.forEach((pelicula) => {
+    const $card = document.createElement("div");
+    $card.classList.add("pelicula");
+    const $linkPelicula = document.createElement("a");
+    $linkPelicula.href = `${pelicula.trailer}`;
+    const $portadaPelicula = document.createElement("img");
+    $portadaPelicula.src = `${pelicula.caratula}`;
+    $portadaPelicula.alt = `${pelicula.descripcion}`;
+    $linkPelicula.appendChild($portadaPelicula);
+    $card.appendChild($linkPelicula);
+    $carouselContainer1.appendChild($card);
+  });
+
+  $carouselContainer2.appendChild($carouselContainer1);
+
+  const $btnL = document.createElement("button");
+  $btnL.role = "button";
+  $btnL.classList.add("flecha-izquierda");
+  const $iconoL = document.createElement("i");
+  $iconoL.classList.add("fas", "fa-angle-left");
+  $btnL.appendChild($iconoL);
+
+  const $btnR = document.createElement("button");
+  $btnR.role = "button";
+  $btnR.classList.add("flecha-derecha");
+  const $iconoR = document.createElement("i");
+  $iconoR.classList.add("fas", "fa-angle-right");
+  $btnR.appendChild($iconoR);
+
+  const $contenedorPrincipal = document.createElement("div");
+  $contenedorPrincipal.classList.add("contenedor-principal");
+  $contenedorPrincipal.appendChild($btnL);
+  $contenedorPrincipal.appendChild($carouselContainer2);
+  $contenedorPrincipal.appendChild($btnR);
+
+  const $h5 = document.createElement("h5");
+  $h5.textContent = `${titulo}`;
+  const $indicadores = document.createElement("div");
+  $indicadores.classList.add("indicadores");
+  const $contenedorTituloControles = document.createElement("div");
+  $contenedorTituloControles.classList.add("contenedor-titulo-controles");
+  $contenedorTituloControles.appendChild($h5);
+  $contenedorTituloControles.appendChild($indicadores);
+
+  const $carousel = document.createElement("div");
+
+  $carousel.classList.add("peliculas-carousel", "contenedor");
+  $carousel.appendChild($contenedorTituloControles);
+  $carousel.appendChild($contenedorPrincipal);
+
+  const $main = document.querySelector("main");
+  $main.appendChild($carousel);
+};
+
+crearCarrusel("titulo");
 // ----- ----- Carrusel. ----- -----
 document.querySelectorAll(".peliculas-carousel").forEach((carousel) => {
   const fila = carousel.querySelector(".contenedor-carousel");
@@ -74,35 +137,35 @@ document.querySelectorAll(".peliculas-carousel").forEach((carousel) => {
   }
 });
 
-cargarPaginaPrincipal()
-export function cargarPaginaPrincipal(){
-const $fondoPrincipal = document.querySelector("#fondoPrincipal");
-const $tituloPrincipal = document.querySelector("#tituloPrincipal");
-const $descripcionPrincipal = document.querySelector("#descripcionPrincipal");
+cargarPaginaPrincipal();
+export function cargarPaginaPrincipal() {
+  const $fondoPrincipal = document.querySelector("#fondoPrincipal");
+  const $tituloPrincipal = document.querySelector("#tituloPrincipal");
+  const $descripcionPrincipal = document.querySelector("#descripcionPrincipal");
 
-  const peliculas = obtenerPeliculasDeLS()
-peliculas.forEach((pelicula)=>{
-  if (pelicula.destacada=== true) {
-  $fondoPrincipal.style.backgroundImage = `url(${pelicula.caratula})`;
-  $tituloPrincipal.textContent = `${pelicula.titulo}`;
-  $descripcionPrincipal.textContent = `${pelicula.descripcion}` 
-  }
-  
-})}
+  const peliculas = obtenerPeliculasDeLS();
+  peliculas.forEach((pelicula) => {
+    if (pelicula.destacada === true) {
+      $fondoPrincipal.style.backgroundImage = `url(${pelicula.caratula})`;
+      $tituloPrincipal.textContent = `${pelicula.titulo}`;
+      $descripcionPrincipal.textContent = `${pelicula.descripcion}`;
+    }
+  });
+}
+
+/*
 //PELICULA DESTACADA
 const $card = document.createElement("div");
-  $card.classList.add("pelicula");
-  const $linkPelicula = document.createElement("a");
-  $linkPelicula.href = `./pages/error404.html`;
-  const $portadaPelicula = document.createElement("img");
-  $portadaPelicula.src = `${pelicula.caratula}`;
-  $portadaPelicula.alt = `${pelicula.nombre}`
-
+$card.classList.add("pelicula");
+const $linkPelicula = document.createElement("a");
+$linkPelicula.href = `./pages/error404.html`;
+const $portadaPelicula = document.createElement("img");
+$portadaPelicula.src = `${pelicula.caratula}`;
+$portadaPelicula.alt = `${pelicula.nombre}`;
+*/
 /* 
 Falta llamar al objeto del LS u obtener el objeto de otro lado
  */
-
-;
 
 //ESTRUCTURA CARD A ENCERRAR EN UN FOREACH
 /* 
