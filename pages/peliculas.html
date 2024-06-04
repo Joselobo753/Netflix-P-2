@@ -16,13 +16,13 @@
       content="Grupo 2: Jose Lobo, Santiago Puertas, Leandro Vinticol"
     />
     <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
-    />
-    <link
       rel="shortcut icon"
       href="https://seeklogo.com/images/N/netflix-n-logo-0F1ED3EBEB-seeklogo.com.png"
       type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -30,14 +30,17 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../css/series.css" />
     <link rel="stylesheet" href="../css/common.css" />
-    <link rel="stylesheet" href="../css/p404.css" />
-    <title>Página no encontrada</title>
+    <title>Series</title>
   </head>
   <body>
     <header>
       <div class="justify-content-between">
-        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark px-5">
+        <nav
+          id="navbar"
+          class="navbar navbar-expand-lg navbar-dark fixed-top px-5"
+        >
           <a class="navbar-brand" href="../index.html">
             <img
               src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
@@ -65,10 +68,12 @@
                 <a class="nav-link" href="./series.html">Series</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./peliculas.html">Películas</a>
+                <a class="nav-link" href="#">Películas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Novedades populares</a>
+                <a class="nav-link" href="./error404.html"
+                  >Novedades populares</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./contactanos.html">Contactanos</a>
@@ -79,7 +84,9 @@
                 >
               </li>
             </ul>
-            <div class="d-flex align-items-center ms-auto">
+            <div
+              class="d-flex justify-content-center align-items-center ms-auto"
+            >
               <button
                 class="search-btn nav-link"
                 data-bs-toggle="modal"
@@ -90,24 +97,23 @@
               <a class="nav-link invert" href="./error404.html"
                 ><i class="fas fa-bell"></i
               ></a>
-              <div>
-                <!-- Button trigger modal -->
-                <button
-                  id="btnLogin"
-                  type="button"
-                  class="text-center"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modal"
-                >
-                  <i class="fas fa-user-circle"></i>
-                </button>
-              </div>
+              <!-- Button trigger modal -->
+              <a
+                class="ms-2"
+                id="btnLogin"
+                type="button"
+                class="text-center"
+                data-bs-toggle="modal"
+                data-bs-target="#modal"
+              >
+                <i class="fas fa-user-circle"></i>
+              </a>
             </div>
           </div>
         </nav>
       </div>
     </header>
-    <main>
+    <main class="d-flex justify-content-center">
       <!-- Modal del buscador -->
       <div
         class="modal fade search-modal"
@@ -196,7 +202,7 @@
                                   Iniciar sesión
                                 </a>
                                 <p class="mb-0 mt-4 text-center">
-                                  <a href="./pages/error404.html" class="link"
+                                  <a href="./error404.html" class="link"
                                     >Olvidaste tu contraseña?</a
                                   >
                                 </p>
@@ -258,17 +264,12 @@
           </div>
         </div>
       </div>
-      <div
-        class="portada404 container-fluid p-0 d-flex justify-content-center align-items-center"
-      >
-        <div class="d-flex flex-column align-items-center">
-          <h2>!Oops</h2>
-          <p class="msg404">
-            Estas perdido como si vieses Dark por primera vez
-          </p>
-          <p class="msg404">Error 404</p>
-          <a class="link404" href="../index.html">Volver a Inicio</a>
+      <!-- Series o peliculas-->
+      <div class="container-fluid row m-5 pt-4 d-flex justify-content-center">
+        <div class="col-12 d-flex justify-content-center">
+          <h1>Peliculas</h1>
         </div>
+        <div id="contenedorSeries" class="container row w-100 mt-2"></div>
       </div>
     </main>
     <footer class="footer mt-4 py-4 text-white">
@@ -290,41 +291,47 @@
               ><i class="fab fa-youtube"></i
             ></a>
           </div>
-          <div class="row">
-            <div class="col-sm-6 col-md-3">
-              <ul class="text-start">
-                <li><a href="#">Audio descriptivo</a></li>
-                <li><a href="#">Relaciones con inversionistas</a></li>
-                <li><a href="#">Avisos legales</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <ul class="text-start">
-                <li><a href="#">Centro de ayuda</a></li>
-                <li><a href="#">Empleo</a></li>
-                <li><a href="#">Preferencias de cookies</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <ul class="text-start">
-                <li><a href="#">Tarjetas de regalo</a></li>
-                <li><a href="#">Términos de uso</a></li>
-                <li><a href="#">Información corporativa</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <ul class="text-start">
-                <li><a href="#">Prensa</a></li>
-                <li><a href="#">Privacidad</a></li>
-                <li><a href="#">Contáctanos</a></li>
-              </ul>
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-3">
+            <ul class="text-start">
+              <li><a href="./error404.html">Audio descriptivo</a></li>
+              <li>
+                <a href="./error404.html">Relaciones con inversionistas</a>
+              </li>
+              <li><a href="./error404.html">Avisos legales</a></li>
+            </ul>
           </div>
-          <div class="row mt-3">
-            <div class="col-md-12">
-              <button class="btn btn-sm">Código de servicio</button>
-              <p class="mt-2">© 1997-2024 Netflix, Inc.</p>
-            </div>
+          <div class="col-sm-6 col-md-3">
+            <ul class="text-start">
+              <li><a href="./error404.html">Centro de ayuda</a></li>
+              <li><a href="./error404.html">Empleo</a></li>
+              <li>
+                <a href="./error404.html">Preferencias de cookies</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <ul class="text-start">
+              <li><a href="./error404.html">Tarjetas de regalo</a></li>
+              <li><a href="./error404.html">Términos de uso</a></li>
+              <li>
+                <a href="./error404.html">Información corporativa</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <ul class="text-start">
+              <li><a href="./error404.html">Prensa</a></li>
+              <li><a href="./error404.html">Privacidad</a></li>
+              <li><a href="./error404.html">Contáctanos</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <button class="btn btn-sm">Código de servicio</button>
+            <p class="mt-2">© 1997-2024 Netflix, Inc.</p>
           </div>
         </div>
       </div>
@@ -341,5 +348,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="../js/login/login.js"></script>
     <script type="module" src="../js/common.js"></script>
+    <script type="module" src="../js/peliculas/app.js"></script>
   </body>
 </html>

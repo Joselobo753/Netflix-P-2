@@ -6,7 +6,7 @@ const listaPeliculas = obtenerPeliculasDeLS();
 const listaAMostrar = [];
 
 listaPeliculas.forEach((pelicula) => {
-  if (pelicula.tipo === "serie") {
+  if (pelicula.tipo === "pelicula") {
     listaAMostrar.push(pelicula);
   }
 });
