@@ -2,7 +2,6 @@
   --red: #db0000;
   --background: #141414;
   --secondary: #808080;
-  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem var(--red);
 }
 
 body {
@@ -57,16 +56,7 @@ main {
   & div {
     & img {
       object-fit: cover;
-    }
-    & .bred {
-      padding: 5px 10px;
-      color: #ffffff;
-      background-color: var(--red);
-      font-size: 0.8rem;
-      &:hover {
-        background: #db000093;
-      }
-    }
+    }  
   }
   & .tabla-pelis {
     background-color: var(--background);
